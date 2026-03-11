@@ -1,62 +1,46 @@
-// ─────────────────────────────────────────────────────────────
-// Skills & Tech Stack Data
-// Source: Marcos Astudillo Resume
-// ─────────────────────────────────────────────────────────────
-
-export interface SkillCategory {
-  id: string
-  icon: string
-  skills: string[]
-}
-
+// Skills & Tech Stack Data - Merged from all resumes
+export interface SkillCategory { id: string; icon: string; skills: string[] }
 export interface SkillCategories {
-  languages: SkillCategory
-  frameworks: SkillCategory
-  databases: SkillCategory
-  cloud: SkillCategory
-  web: SkillCategory
-  tools: SkillCategory
+  languages: SkillCategory; frameworks: SkillCategory; databases: SkillCategory
+  cloud: SkillCategory; web: SkillCategory; tools: SkillCategory
+  ai: SkillCategory; testing: SkillCategory
 }
 
 export const skillCategories: SkillCategories = {
   languages: {
-    id: 'languages',
-    icon: '{}',
-    skills: ['TypeScript', 'JavaScript', 'Python', 'Java', 'SQL'],
+    id: 'languages', icon: '{}',
+    skills: ['TypeScript', 'JavaScript', 'Python', 'PHP', 'Java', 'C#', 'SQL', 'NoSQL', 'PL/SQL', 'Smalltalk'],
   },
   frameworks: {
-    id: 'frameworks',
-    icon: '⚛',
-    skills: ['Node.js', 'Express.js', 'React', 'Next.js', 'Django'],
+    id: 'frameworks', icon: 'box',
+    skills: ['Laravel', 'Node.js', 'Express.js', 'React', 'Angular', 'Vue 3', 'Next.js', 'Django', 'Bootstrap'],
   },
   databases: {
-    id: 'databases',
-    icon: '🗄',
-    skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'DynamoDB', 'Redis'],
+    id: 'databases', icon: 'db',
+    skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'DynamoDB', 'Redis', 'Supabase'],
   },
   cloud: {
-    id: 'cloud',
-    icon: '☁',
-    skills: ['AWS', 'Google Cloud', 'Microsoft Azure', 'Docker', 'CI/CD', 'GitHub Actions', 'Jenkins'],
+    id: 'cloud', icon: 'cloud',
+    skills: ['AWS', 'Google Cloud', 'Microsoft Azure', 'Docker', 'CI/CD', 'GitHub Actions', 'GitLab CI/CD', 'Jenkins'],
   },
   web: {
-    id: 'web',
-    icon: '🌐',
-    skills: ['REST APIs', 'HTML5', 'CSS3', 'Swagger/OpenAPI', 'JSON', 'Microservices'],
+    id: 'web', icon: 'globe',
+    skills: ['REST APIs', 'HTML5', 'CSS3', 'Swagger/OpenAPI', 'JSON', 'YAML', 'Microservices', 'JWT'],
   },
   tools: {
-    id: 'tools',
-    icon: '🛠',
-    skills: ['Git', 'GitHub', 'Postman', 'Linux', 'Agile/SCRUM', 'Jira', 'VS Code'],
+    id: 'tools', icon: 'tool',
+    skills: ['Git', 'GitHub', 'Postman', 'Linux', 'macOS', 'Agile/SCRUM', 'VS Code', 'VMware', 'ETL Workflows'],
+  },
+  ai: {
+    id: 'ai', icon: 'brain',
+    skills: ['Data Engineering', 'ETL Workflows', 'Big Data Analytics', 'LLMs (knowledge of)', 'Data-Driven Solutions'],
+  },
+  testing: {
+    id: 'testing', icon: 'test',
+    skills: ['pytest', 'unittest', 'Test Automation', 'Software Validation', 'Postman API Testing'],
   },
 }
 
-// Featured / highlighted skills for hero or about section
 export const featuredSkills = [
-  'TypeScript',
-  'Node.js',
-  'React',
-  'PostgreSQL',
-  'Docker',
-  'AWS',
+  'TypeScript', 'Node.js', 'React', 'Laravel', 'PostgreSQL', 'Docker', 'AWS', 'Python',
 ]
