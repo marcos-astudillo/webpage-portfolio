@@ -18,7 +18,7 @@ export interface Translations {
   }
   skills: {
     title: string; subtitle: string
-    categories: { languages: string; frameworks: string; databases: string; cloud: string; web: string; tools: string }
+    categories: { languages: string; frameworks: string; databases: string; cloud: string; web: string; tools: string; ai: string; testing: string }
   }
   experience: { title: string; subtitle: string; present: string; keyAchievements: string; remote: string }
   education: { title: string; subtitle: string; gpa: string; honours: string; relevant: string; certifications: string }
@@ -28,6 +28,7 @@ export interface Translations {
     success: { title: string; message: string }
     error: { title: string; message: string }
     validation: { nameRequired: string; emailRequired: string; emailInvalid: string; subjectRequired: string; messageRequired: string; messageTooShort: string }
+    captcha: { label: string; placeholder: string; invalid: string }
     info: { email: string; location: string; availability: string; availabilityValue: string }
   }
   portfolio: {

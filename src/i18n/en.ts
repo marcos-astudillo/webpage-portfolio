@@ -26,7 +26,7 @@ export const en: Translations = {
   },
   skills: {
     title: 'Tech Stack', subtitle: 'Technologies and tools I work with',
-    categories: { languages: 'Programming Languages', frameworks: 'Frameworks & Libraries', databases: 'Databases', cloud: 'Cloud & DevOps', web: 'Web Technologies', tools: 'Tools & Methodologies' },
+    categories: { languages: 'Programming Languages', frameworks: 'Frameworks & Libraries', databases: 'Databases', cloud: 'Cloud & DevOps', web: 'Web Technologies', tools: 'Tools & Methodologies', ai: 'AI & Data Engineering', testing: 'Testing & QA' },
   },
   experience: { title: 'Work Experience', subtitle: 'My professional journey', present: 'Present', keyAchievements: 'Key Achievements', remote: 'Remote' },
   education: { title: 'Education & Certifications', subtitle: 'Academic background and continuous learning', gpa: 'GPA', honours: 'Honours', relevant: 'Relevant Coursework', certifications: 'Certifications' },
@@ -36,6 +36,7 @@ export const en: Translations = {
     success: { title: 'Message Sent!', message: "Thanks for reaching out. I'll get back to you as soon as possible." },
     error: { title: 'Something went wrong', message: 'Please try again or email me directly at m.astudillo1986@gmail.com' },
     validation: { nameRequired: 'Name is required', emailRequired: 'Email is required', emailInvalid: 'Please enter a valid email address', subjectRequired: 'Subject is required', messageRequired: 'Message is required', messageTooShort: 'Message must be at least 10 characters' },
+    captcha: { label: 'Verify you are human', placeholder: 'Your answer', invalid: 'Incorrect answer — please try again' },
     info: { email: 'Email', location: 'Location', availability: 'Availability', availabilityValue: 'Open to opportunities' },
   },
   portfolio: {

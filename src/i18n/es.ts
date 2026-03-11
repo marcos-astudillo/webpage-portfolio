@@ -26,7 +26,7 @@ export const es: Translations = {
   },
   skills: {
     title: 'Stack Tecnológico', subtitle: 'Tecnologías y herramientas con las que trabajo',
-    categories: { languages: 'Lenguajes de Programación', frameworks: 'Frameworks y Librerías', databases: 'Bases de Datos', cloud: 'Cloud y DevOps', web: 'Tecnologías Web', tools: 'Herramientas y Metodologías' },
+    categories: { languages: 'Lenguajes de Programación', frameworks: 'Frameworks y Librerías', databases: 'Bases de Datos', cloud: 'Cloud y DevOps', web: 'Tecnologías Web', tools: 'Herramientas y Metodologías', ai: 'IA e Ingeniería de Datos', testing: 'Testing y QA' },
   },
   experience: { title: 'Experiencia Laboral', subtitle: 'Mi trayectoria profesional', present: 'Presente', keyAchievements: 'Logros Clave', remote: 'Remoto' },
   education: { title: 'Educación y Certificaciones', subtitle: 'Formación académica y aprendizaje continuo', gpa: 'Promedio', honours: 'Con Honores', relevant: 'Cursos Relevantes', certifications: 'Certificaciones' },
@@ -36,6 +36,7 @@ export const es: Translations = {
     success: { title: '¡Mensaje Enviado!', message: 'Gracias por contactarme. Te responderé lo antes posible.' },
     error: { title: 'Algo salió mal', message: 'Por favor intenta de nuevo o escríbeme directamente a m.astudillo1986@gmail.com' },
     validation: { nameRequired: 'El nombre es requerido', emailRequired: 'El correo es requerido', emailInvalid: 'Por favor ingresa un correo válido', subjectRequired: 'El asunto es requerido', messageRequired: 'El mensaje es requerido', messageTooShort: 'El mensaje debe tener al menos 10 caracteres' },
+    captcha: { label: 'Verifica que eres humano', placeholder: 'Tu respuesta', invalid: 'Respuesta incorrecta — intenta de nuevo' },
     info: { email: 'Correo', location: 'Ubicación', availability: 'Disponibilidad', availabilityValue: 'Disponible para oportunidades' },
   },
   portfolio: {

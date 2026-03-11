@@ -19,8 +19,8 @@ function getInitialLanguage(): Language {
   if (typeof window === 'undefined') return 'en'
   const saved = localStorage.getItem(STORAGE_KEY) as Language | null
   if (saved === 'en' || saved === 'es') return saved
-  const browserLang = navigator.language.split('-')[0]
-  return browserLang === 'es' ? 'es' : 'en'
+  // Always default to English — no browser-language detection
+  return 'en'
 }
 
 const translations: Record<Language, Translations> = { en, es }

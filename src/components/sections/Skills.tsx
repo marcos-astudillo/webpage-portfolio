@@ -1,4 +1,4 @@
-import { Terminal, Box, Database, Cloud, Globe, Wrench } from 'lucide-react'
+import { Terminal, Box, Database, Cloud, Globe, Wrench, Brain, FlaskConical } from 'lucide-react'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { Card } from '@/components/ui/Card'
@@ -15,9 +15,11 @@ const categoryIcons: Record<CategoryKey, typeof Terminal> = {
   cloud:      Cloud,
   web:        Globe,
   tools:      Wrench,
+  ai:         Brain,
+  testing:    FlaskConical,
 }
 
-const categoryOrder: CategoryKey[] = ['languages', 'frameworks', 'databases', 'cloud', 'web', 'tools']
+const categoryOrder: CategoryKey[] = ['languages', 'frameworks', 'databases', 'cloud', 'web', 'tools', 'ai', 'testing']
 
 export function Skills() {
   const { t } = useLanguage()
