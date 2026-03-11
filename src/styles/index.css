@@ -1,0 +1,296 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────
+   Design Tokens — CSS Custom Properties
+   ───────────────────────────────────────────────────────────── */
+:root {
+  /* Light Theme */
+  --bg-primary: #f9fafb;
+  --bg-secondary: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-elevated: #f8fafc;
+  --border-color: rgba(0, 0, 0, 0.07);
+  --border-subtle: rgba(0, 0, 0, 0.04);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --accent-light: #818cf8;
+  --accent-subtle: rgba(99, 102, 241, 0.1);
+  --accent-glow: rgba(99, 102, 241, 0.2);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.07), 0 4px 10px rgba(0,0,0,0.04);
+  --shadow-accent: 0 8px 25px rgba(99, 102, 241, 0.2);
+}
+
+.dark {
+  /* Dark Theme */
+  --bg-primary: #080812;
+  --bg-secondary: #0d0d1a;
+  --bg-card: #111122;
+  --bg-elevated: #161628;
+  --border-color: rgba(255, 255, 255, 0.07);
+  --border-subtle: rgba(255, 255, 255, 0.04);
+  --text-primary: #e8eaf0;
+  --text-secondary: #8b93a7;
+  --text-muted: #565e78;
+  --accent: #818cf8;
+  --accent-hover: #6366f1;
+  --accent-light: #a5b4fc;
+  --accent-subtle: rgba(129, 140, 248, 0.12);
+  --accent-glow: rgba(129, 140, 248, 0.15);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.25), 0 2px 4px rgba(0,0,0,0.2);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.4), 0 4px 10px rgba(0,0,0,0.3);
+  --shadow-accent: 0 8px 25px rgba(129, 140, 248, 0.15);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Base Reset & Global Styles
+   ───────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Typography
+   ───────────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+code, pre {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Scrollbar Styling
+   ───────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-subtle);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Selection Color
+   ───────────────────────────────────────────────────────────── */
+::selection {
+  background: var(--accent-subtle);
+  color: var(--text-primary);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Utility Classes
+   ───────────────────────────────────────────────────────────── */
+.text-gradient {
+  background: linear-gradient(135deg, var(--accent) 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-card {
+  background-color: var(--bg-card);
+}
+
+.bg-elevated {
+  background-color: var(--bg-elevated);
+}
+
+.border-subtle {
+  border: 1px solid var(--border-color);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-muted-custom {
+  color: var(--text-muted);
+}
+
+.shadow-card {
+  box-shadow: var(--shadow-md);
+}
+
+.shadow-lg-custom {
+  box-shadow: var(--shadow-lg);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Glassmorphism
+   ───────────────────────────────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass {
+  background: rgba(17, 17, 34, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Accent Glow Effect
+   ───────────────────────────────────────────────────────────── */
+.glow-accent {
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Section Transitions
+   ───────────────────────────────────────────────────────────── */
+.section-enter {
+  animation: sectionEnter 0.4s ease-out forwards;
+}
+
+@keyframes sectionEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Profile Image Ring
+   ───────────────────────────────────────────────────────────── */
+.profile-ring {
+  background: linear-gradient(135deg, var(--accent) 0%, #a78bfa 50%, var(--accent) 100%);
+  background-size: 200% 200%;
+  animation: gradientRotate 4s ease infinite;
+}
+
+@keyframes gradientRotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Timeline
+   ───────────────────────────────────────────────────────────── */
+.timeline-line {
+  background: linear-gradient(to bottom, var(--accent), transparent);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Navigation Active Indicator
+   ───────────────────────────────────────────────────────────── */
+.nav-indicator {
+  background: linear-gradient(90deg, var(--accent), #a78bfa);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Input & Form Styles
+   ───────────────────────────────────────────────────────────── */
+.form-input {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+  font-size: 0.9375rem;
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-subtle);
+}
+
+.form-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Mobile Menu Backdrop
+   ───────────────────────────────────────────────────────────── */
+.menu-backdrop {
+  background: rgba(8, 8, 18, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Skill Bar
+   ───────────────────────────────────────────────────────────── */
+.skill-bar-fill {
+  background: linear-gradient(90deg, var(--accent), #a78bfa);
+  border-radius: 4px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Coming Soon Gradient
+   ───────────────────────────────────────────────────────────── */
+.hero-gradient {
+  background: radial-gradient(ellipse at 20% 50%, var(--accent-subtle) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 20%, rgba(167, 139, 250, 0.08) 0%, transparent 50%);
+}
