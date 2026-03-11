@@ -13,9 +13,10 @@ export function Footer() {
 
           {/* Brand */}
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-md bg-[var(--accent)] flex items-center justify-center text-white font-bold text-xs">
-              M
-            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 44" fill="none" width="28" height="21" aria-hidden="true" className="text-[var(--accent)]">
+              <path d="M5 40 L5 5 L20 27 L35 5 L50 40" stroke="currentColor" strokeWidth="6" strokeLinecap="square" strokeLinejoin="miter"/>
+              <line x1="24" y1="27" x2="42" y2="27" stroke="currentColor" strokeWidth="6" strokeLinecap="square"/>
+            </svg>
             <span className="text-sm font-semibold text-[var(--text-primary)]">
               Marcos Astudillo
             </span>

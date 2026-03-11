@@ -5,6 +5,33 @@ import { useTheme } from '@/context/ThemeContext'
 import { useLanguage, type Language } from '@/context/LanguageContext'
 import { NAV_SECTIONS, type NavSection } from '@/config/site'
 
+// MA Monogram SVG — adapts to current theme via currentColor
+function MALogo({ size = 32, className = '' }: { size?: number; className?: string }) {
+  const h = Math.round(size * 0.75)
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 56 44"
+      fill="none"
+      width={size}
+      height={h}
+      className={className}
+      aria-hidden="true"
+    >
+      {/* M left bar + inner V (shared with A) + A right leg */}
+      <path
+        d="M5 40 L5 5 L20 27 L35 5 L50 40"
+        stroke="currentColor"
+        strokeWidth="6"
+        strokeLinecap="square"
+        strokeLinejoin="miter"
+      />
+      {/* A crossbar */}
+      <line x1="24" y1="27" x2="42" y2="27" stroke="currentColor" strokeWidth="6" strokeLinecap="square" />
+    </svg>
+  )
+}
+
 interface HeaderProps {
   activeSection: NavSection
   onNavClick: (section: NavSection) => void
@@ -63,14 +90,15 @@ export function Header({ activeSection, onNavClick }: HeaderProps) {
             <Link
               to="/"
               onClick={() => handleNavClick('home')}
-              className="flex items-center gap-2 group"
+              className="flex items-center gap-2.5 group"
               aria-label="Marcos Astudillo — Home"
             >
-              <div className="w-8 h-8 rounded-lg bg-[var(--accent)] flex items-center justify-center text-white font-bold text-sm group-hover:scale-105 transition-transform">
-                M
-              </div>
-              <span className="font-bold text-[var(--text-primary)] hidden sm:block">
-                Marcos<span className="text-[var(--accent)]">.</span>
+              <MALogo
+                size={36}
+                className="text-[var(--accent)] group-hover:text-[var(--accent-hover)] transition-colors duration-200"
+              />
+              <span className="font-bold text-[var(--text-primary)] hidden sm:block tracking-tight">
+                Astudillo<span className="text-[var(--accent)]">.</span>
               </span>
             </Link>
 
