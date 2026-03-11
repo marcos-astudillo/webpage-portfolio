@@ -1,5 +1,5 @@
-import { useState, FormEvent } from 'react'
-import { Send, Mail, MapPin, CheckCircle, AlertCircle, Loader2, Clock } from 'lucide-react'
+import { useState, FormEvent, useCallback } from 'react'
+import { Send, Mail, MapPin, CheckCircle, AlertCircle, Loader2, Clock, RefreshCw } from 'lucide-react'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { Card } from '@/components/ui/Card'
@@ -25,6 +25,12 @@ type SubmitStatus = 'idle' | 'loading' | 'success' | 'error'
 
 const initialForm: FormState = { name: '', email: '', subject: '', message: '' }
 
+function generateCaptcha(): { a: number; b: number; answer: number } {
+  const a = Math.floor(Math.random() * 9) + 1
+  const b = Math.floor(Math.random() * 9) + 1
+  return { a, b, answer: a + b }
+}
+
 function validateForm(data: FormState, t: ReturnType<typeof useLanguage>['t']): FormErrors {
   const errors: FormErrors = {}
   const v = t.contact.validation
@@ -49,6 +55,15 @@ export function Contact() {
   const [form, setForm] = useState<FormState>(initialForm)
   const [errors, setErrors] = useState<FormErrors>({})
   const [status, setStatus] = useState<SubmitStatus>('idle')
+  const [captcha, setCaptcha] = useState(generateCaptcha)
+  const [captchaInput, setCaptchaInput] = useState('')
+  const [captchaError, setCaptchaError] = useState(false)
+
+  const refreshCaptcha = useCallback(() => {
+    setCaptcha(generateCaptcha())
+    setCaptchaInput('')
+    setCaptchaError(false)
+  }, [])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -66,6 +81,12 @@ export function Contact() {
       return
     }
 
+    if (parseInt(captchaInput, 10) !== captcha.answer) {
+      setCaptchaError(true)
+      refreshCaptcha()
+      return
+    }
+
     setStatus('loading')
 
     try {
@@ -79,6 +100,7 @@ export function Contact() {
         setStatus('success')
         setForm(initialForm)
         setErrors({})
+        refreshCaptcha()
       } else {
         setStatus('error')
       }
@@ -89,6 +111,7 @@ export function Contact() {
         setTimeout(() => {
           setStatus('success')
           setForm(initialForm)
+          refreshCaptcha()
         }, 1000)
       } else {
         setStatus('error')
@@ -167,6 +190,21 @@ export function Contact() {
                 </div>
               </div>
             </Card>
+          </AnimatedSection>
+
+          {/* Ottawa mini-map */}
+          <AnimatedSection delay={260} direction="left">
+            <div className="rounded-xl overflow-hidden border border-[var(--border)] shadow-sm">
+              <iframe
+                title="Ottawa, Ontario, Canada"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-75.8372%2C45.3202%2C-75.5572%2C45.5228&amp;layer=mapnik&amp;marker=45.4215%2C-75.6972"
+                width="100%"
+                height="180"
+                loading="lazy"
+                style={{ border: 0, display: 'block' }}
+                aria-label="Map of Ottawa, Ontario, Canada"
+              />
+            </div>
           </AnimatedSection>
         </div>
 
@@ -282,6 +320,41 @@ export function Contact() {
                     {errors.message && (
                       <p className="mt-1 text-xs text-red-400 flex items-center gap-1">
                         <AlertCircle size={11} /> {errors.message}
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Math Captcha */}
+                  <div>
+                    <label className="block text-sm font-medium text-[var(--text-secondary)] mb-1.5">
+                      {t.contact.captcha.label} <span className="text-red-400">*</span>
+                    </label>
+                    <div className="flex items-center gap-3">
+                      <div className="flex-shrink-0 px-4 py-2.5 rounded-lg bg-[var(--accent-subtle)] text-[var(--text-primary)] font-mono font-semibold text-sm select-none">
+                        {captcha.a} + {captcha.b} = ?
+                      </div>
+                      <input
+                        type="number"
+                        inputMode="numeric"
+                        value={captchaInput}
+                        onChange={e => { setCaptchaInput(e.target.value); setCaptchaError(false) }}
+                        placeholder={t.contact.captcha.placeholder}
+                        className={`form-input w-28 ${captchaError ? 'border-red-400' : ''}`}
+                        disabled={status === 'loading'}
+                        autoComplete="off"
+                      />
+                      <button
+                        type="button"
+                        onClick={refreshCaptcha}
+                        className="p-2 rounded-lg text-[var(--text-muted)] hover:text-[var(--accent)] hover:bg-[var(--accent-subtle)] transition-colors"
+                        title="New question"
+                      >
+                        <RefreshCw size={15} />
+                      </button>
+                    </div>
+                    {captchaError && (
+                      <p className="mt-1 text-xs text-red-400 flex items-center gap-1">
+                        <AlertCircle size={11} /> {t.contact.captcha.invalid}
                       </p>
                     )}
                   </div>
