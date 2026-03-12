@@ -1,306 +1,287 @@
-# Marcos Astudillo --- Personal Portfolio
+# Marcos Astudillo — Personal Portfolio
 
-[![Live
-Demo](https://img.shields.io/badge/Live-Demo-blueviolet?logo=google-chrome)](https://marcosastudillo.com)
-[![GitHub
-Repo](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/marcos-astudillo/webpage-portfolio)
+<p align="center">
+
+[![Live Demo](https://img.shields.io/badge/Live-Demo-blueviolet?logo=google-chrome)](https://www.marcosastudillo.com)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/marcos-astudillo/webpage-portfolio)
+
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
 ![Tailwind](https://img.shields.io/badge/TailwindCSS-3-38B2AC?logo=tailwind-css)
+
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite)
+![Build](https://img.shields.io/github/actions/workflow/status/marcos-astudillo/webpage-portfolio/ci.yml?label=build)
+![Deployment](https://img.shields.io/badge/deployment-HostGator-orange)
+
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Professional portfolio website for
-**[marcosastudillo.com](https://marcosastudillo.com)**.
+</p>
 
-Built with **Vite + React + TypeScript + Tailwind CSS**.\
-The project outputs a **static build** that can be deployed on almost
-any hosting provider, including **HostGator shared hosting**.
+Professional portfolio website for **https://www.marcosastudillo.com**.
 
-------------------------------------------------------------------------
+Built with **Vite + React + TypeScript + Tailwind CSS**.  
+The project outputs a **static build** that can be deployed on almost any hosting provider, including **HostGator shared hosting**.
+
+---
+
+## 🌐 Live Demo
+
+👉 https://www.marcosastudillo.com
+
+---
 
 ## Preview
 
-![Portfolio Screenshot](images/webpage.png)
+![Portfolio Screenshot](public/assets/images/webpage.png)
 
-------------------------------------------------------------------------
+---
 
 ## Features
 
--   🌙 Dark / Light theme toggle
--   🌎 English / Spanish language switch
--   📱 Fully responsive design
--   🧩 Modular component architecture
--   📂 Reusable portfolio system
--   📨 Contact form with captcha protection
--   ⚡ Fast static build using Vite
--   🧱 Clean project structure designed for reuse
+- 🌙 Dark / Light theme toggle
+- 🌎 English / Spanish language switch
+- 📱 Fully responsive design
+- 🧩 Modular component architecture
+- 📂 Reusable portfolio system
+- 📨 Contact form with captcha protection
+- ⚡ Fast static build using Vite
+- 🧱 Clean project structure designed for reuse
 
-------------------------------------------------------------------------
+---
+
+## Architecture
+
+The project follows a **modular and reusable architecture** designed for maintainability and scalability.
+
+Key design principles:
+
+- Component-based UI architecture
+- Section-based page organization
+- Context providers for theme and language
+- Static data separated from UI components
+- Reusable portfolio structure
+- CI/CD deployment pipeline
+
+---
 
 ## Tech Stack
 
-  Layer             Technology
-  ----------------- ----------------------------------------
-  Framework         React 18 + TypeScript
-  Build Tool        Vite 5
-  Styling           Tailwind CSS 3 + CSS Custom Properties
-  Routing           React Router v6
-  Animations        Framer Motion
-  Icons             Lucide React
-  i18n              Custom lightweight context (EN/ES)
-  Contact Backend   PHP (`public/form-handler.php`)
+| Layer           | Technology                             |
+| --------------- | -------------------------------------- |
+| Framework       | React 18 + TypeScript                  |
+| Build Tool      | Vite 5                                 |
+| Styling         | Tailwind CSS 3 + CSS Custom Properties |
+| Routing         | React Router v6                        |
+| Animations      | Framer Motion                          |
+| Icons           | Lucide React                           |
+| i18n            | Custom lightweight context (EN/ES)     |
+| Contact Backend | PHP (`public/form-handler.php`)        |
+| Deployment      | HostGator Shared Hosting (FTP upload)  |
 
-------------------------------------------------------------------------
+---
 
 ## Getting Started
 
-Install dependencies:
+Install dependencies
 
-    npm install
+```bash
+npm install
+```
 
-Run development server:
+Run development server
 
-    npm run dev
+```bash
+npm run dev
+```
 
-Build production bundle:
+Build production bundle
 
-    npm run build
+```bash
+npm run build
+```
 
-Preview production build locally:
+Preview production build
 
-    npm run preview
+```bash
+npm run preview
+```
 
-------------------------------------------------------------------------
+---
 
 ## Project Structure
 
-    webpage-portfolio/
-    ├── public/
-    │   ├── assets/
-    │   │   ├── images/
-    │   │   │   └── profile.png
-    │   │   └── resume/
-    │   │       ├── marcos-astudillo-resume-en.pdf
-    │   │       └── marcos-astudillo-resume-es.pdf
-    │   ├── .htaccess
-    │   ├── form-handler.php
-    │   └── favicon.svg
-    ├── src/
-    │   ├── components/
-    │   │   ├── ui/
-    │   │   ├── layout/
-    │   │   └── sections/
-    │   ├── pages/
-    │   ├── context/
-    │   ├── i18n/
-    │   ├── data/
-    │   ├── config/
-    │   └── styles/
-    ├── index.html
-    ├── vite.config.ts
-    └── tailwind.config.ts
+```
+webpage-portfolio/
+├── public/
+│   ├── assets/
+│   │   ├── images/
+│   │   │   ├── profile.png
+│   │   │   └── webpage.png
+│   │   └── resume/
+│   │       ├── marcos-astudillo-resume-en.pdf
+│   │       └── marcos-astudillo-resume-es.pdf
+│   ├── .htaccess
+│   ├── form-handler.php
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   ├── ui/
+│   │   ├── layout/
+│   │   └── sections/
+│   ├── pages/
+│   ├── context/
+│   ├── i18n/
+│   ├── data/
+│   ├── config/
+│   └── styles/
+├── index.html
+├── vite.config.ts
+└── tailwind.config.ts
+```
 
-------------------------------------------------------------------------
+---
 
-## Key Configuration
+## Customization
 
-### Toggle Portfolio Mode
+### Portfolio Mode
 
 Edit:
 
-    src/config/site.ts
+```
+src/config/site.ts
+```
 
 Example:
 
-    export const PORTFOLIO_MODE: 'coming-soon' | 'projects' = 'coming-soon'
+```ts
+export const PORTFOLIO_MODE: "coming-soon" | "projects" = "coming-soon";
+```
 
 When projects are ready:
 
-    export const PORTFOLIO_MODE: 'coming-soon' | 'projects' = 'projects'
+```ts
+export const PORTFOLIO_MODE: "coming-soon" | "projects" = "projects";
+```
 
-------------------------------------------------------------------------
+---
 
 ### Add Projects
 
 Edit:
 
-    src/data/projects.ts
+```
+src/data/projects.ts
+```
 
 Add new entries to the `projects` array.
 
-------------------------------------------------------------------------
+---
 
-### Add a Language
+### Add or Update Translations
 
-1.  Create a new translation file in:
+Translation files are located in:
 
-```{=html}
-<!-- -->
 ```
-    src/i18n/
-
-Example:
-
-    src/i18n/fr.ts
-
-2.  Implement the `Translations` interface from:
-
-```{=html}
-<!-- -->
+src/i18n/
 ```
-    src/i18n/types.ts
 
-3.  Register the language in:
+Steps:
 
-```{=html}
-<!-- -->
-```
-    src/context/LanguageContext.tsx
+1. Create a new translation file.
+2. Implement the `Translations` interface from `src/i18n/types.ts`.
+3. Register the language in `src/context/LanguageContext.tsx`.
+4. Add the language option to the language switcher in `src/components/layout/Header.tsx`.
 
-4.  Add the language option to the language switcher in:
-
-```{=html}
-<!-- -->
-```
-    src/components/layout/Header.tsx
-
-------------------------------------------------------------------------
+---
 
 ### Update Resume Files
 
 Replace the files in:
 
-    public/assets/resume/
-
-    marcos-astudillo-resume-en.pdf
-    marcos-astudillo-resume-es.pdf
-
-------------------------------------------------------------------------
-
-## Deployment (HostGator Shared Hosting)
-
-1.  Build the project:
-
-```{=html}
-<!-- -->
 ```
-    npm run build
-
-2.  The compiled site will be inside:
-
-```{=html}
-<!-- -->
+public/assets/resume/
 ```
-    dist/
 
-3.  Upload **all files inside `dist/`** to:
+- marcos-astudillo-resume-en.pdf
+- marcos-astudillo-resume-es.pdf
 
-```{=html}
-<!-- -->
+---
+
+### Update Profile Image
+
+Replace:
+
 ```
-    public_html/
-
-using **FTP or cPanel File Manager**.
-
-4.  Upload the contact backend:
-
-```{=html}
-<!-- -->
+public/assets/images/profile.png
 ```
-    public/form-handler.php
 
-to the same directory.
+---
 
-5.  Ensure `.htaccess` is uploaded.
+## Deployment (HostGator)
 
-6.  Configure the email in:
+Build the project:
 
-```{=html}
-<!-- -->
+```bash
+npm run build
 ```
-    form-handler.php
 
-Example:
+The compiled output will be generated in:
 
-    $recipientEmail = "your@email.com";
+```
+dist/
+```
 
-------------------------------------------------------------------------
+Upload **all files inside `dist/`** to:
+
+```
+public_html/
+```
+
+Also upload:
+
+```
+public/form-handler.php
+```
+
+Ensure `.htaccess` is included and update the recipient email inside `form-handler.php`.
+
+---
 
 ## Git Workflow
 
 Typical development workflow:
 
-    git checkout -b feat/feature-name
-    git add .
-    git commit -m "feat: describe your change"
-    git push origin feat/feature-name
+```bash
+git checkout -b feat/feature-name
+git add .
+git commit -m "feat: describe your change"
+git push origin feat/feature-name
+```
 
 After merge:
 
-    git checkout main
-    git pull origin main
+```bash
+git checkout main
+git pull origin main
+```
 
 ### Commit Convention
 
-  Prefix      Purpose
-  ----------- ----------------------
-  feat:       New feature
-  fix:        Bug fix
-  docs:       Documentation
-  refactor:   Code restructuring
-  style:      Visual changes
-  chore:      Tooling / config
-  content:    Text or data updates
+- feat — new feature
+- fix — bug fix
+- docs — documentation
+- refactor — code restructuring
+- style — visual changes
+- chore — tooling or configuration
+- content — text or data updates
 
-------------------------------------------------------------------------
-
-## Reusing This Project for Other Clients
-
-This repository is structured as a **reusable portfolio template**.
-
-Steps:
-
-1.  Fork or copy the repository
-2.  Update:
-
-```{=html}
-<!-- -->
-```
-    src/config/site.ts
-
-3.  Replace content in:
-
-```{=html}
-<!-- -->
-```
-    src/data/
-    src/i18n/
-
-4.  Replace:
-
-```{=html}
-<!-- -->
-```
-    public/assets/images/profile.png
-
-5.  Replace resume files.
-
-6.  Update SEO metadata in:
-
-```{=html}
-<!-- -->
-```
-    index.html
-
-7.  Deploy.
-
-------------------------------------------------------------------------
+---
 
 ## License
 
 This project is licensed under the MIT License.
 
-See the [LICENSE](LICENSE) file for details.
+See the LICENSE file for details.
 
 ---
 
@@ -308,20 +289,20 @@ See the [LICENSE](LICENSE) file for details.
 
 <p align="center">
 
-  <a href="https://www.marcosastudillo.com">
-    <img src="https://img.shields.io/badge/Website-marcosastudillo.com-blueviolet?style=for-the-badge&logo=google-chrome" />
-  </a>
+<a href="https://www.marcosastudillo.com">
+<img src="https://img.shields.io/badge/Website-marcosastudillo.com-blueviolet?style=for-the-badge&logo=google-chrome" />
+</a>
 
-  <a href="https://www.linkedin.com/in/marcos-astudillo-c/">
-    <img src="https://img.shields.io/badge/LinkedIn-Marcos%20Astudillo-blue?style=for-the-badge&logo=linkedin" />
-  </a>
+<a href="https://www.linkedin.com/in/marcos-astudillo-c/">
+<img src="https://img.shields.io/badge/LinkedIn-Marcos%20Astudillo-blue?style=for-the-badge&logo=linkedin" />
+</a>
 
-  <a href="https://github.com/marcos-astudillo">
-    <img src="https://img.shields.io/badge/GitHub-Marcos%20Astudillo-181717?style=for-the-badge&logo=github&logoColor=white" />
-  </a>
+<a href="https://github.com/marcos-astudillo">
+<img src="https://img.shields.io/badge/GitHub-Marcos%20Astudillo-181717?style=for-the-badge&logo=github&logoColor=white" />
+</a>
 
-  <a href="mailto:m.astudillo1986@gmail.com">
-    <img src="https://img.shields.io/badge/Email-m.astudillo1986%40gmail.com-red?style=for-the-badge&logo=gmail" />
-  </a>
+<a href="mailto:m.astudillo1986@gmail.com">
+<img src="https://img.shields.io/badge/Email-m.astudillo1986%40gmail.com-red?style=for-the-badge&logo=gmail" />
+</a>
 
 </p>
