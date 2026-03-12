@@ -29,7 +29,7 @@ export interface Translations {
     error: { title: string; message: string }
     validation: { nameRequired: string; emailRequired: string; emailInvalid: string; subjectRequired: string; messageRequired: string; messageTooShort: string }
     captcha: { label: string; placeholder: string; invalid: string }
-    info: { email: string; phone: string; location: string; availability: string; availabilityValue: string; locationBadges: { remote: string; relocation: string; onsite: string } }
+    info: { email: string; phone: string; location: string; availability: string; availabilityValue: string; locationBadges: { remote: string; relocation: string; onsite: string; hybrid: string } }
   }
   portfolio: {
     title: string; subtitle: string

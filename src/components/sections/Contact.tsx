@@ -154,7 +154,7 @@ export function Contact() {
                 </div>
                 <div className="min-w-0">
                   <p className="text-xs text-[var(--text-muted)] font-medium uppercase tracking-wide mb-0.5">GitHub</p>
-                  <p className="text-sm font-semibold text-[var(--text-primary)] truncate">github.com/ThisIsAntonio</p>
+                  <p className="text-sm font-semibold text-[var(--text-primary)] truncate">github.com/marcos-astudillo</p>
                 </div>
               </a>
             </AnimatedSection>
@@ -270,34 +270,46 @@ export function Contact() {
 
       {/* ── BOTTOM: Ottawa Location Banner ── */}
       <AnimatedSection delay={320}>
-        <div className="mt-10 rounded-xl border border-[var(--border-color)] bg-[var(--bg-card)] p-5 sm:p-6">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="w-6 h-px bg-[var(--accent)]" />
-            <span className="text-xs font-semibold text-[var(--accent)] uppercase tracking-[0.15em]">
-              Ottawa, Ontario · Canada
-            </span>
-          </div>
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <span className="text-3xl" aria-hidden="true">🍁</span>
+        <div className="mt-10 rounded-xl border border-[var(--border-color)] bg-[var(--bg-card)] overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+
+            {/* Left: location info + badges */}
+            <div className="p-5 sm:p-6 flex flex-col justify-between gap-5">
               <div>
-                <p className="font-bold text-[var(--text-primary)]">Ottawa, Ontario</p>
-                <p className="text-sm text-[var(--text-muted)]">Canada · EST (UTC-5)</p>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="w-6 h-px bg-[var(--accent)]" />
+                  <span className="text-xs font-semibold text-[var(--accent)] uppercase tracking-[0.15em]">
+                    Ottawa, Ontario · Canada
+                  </span>
+                </div>
+                <div className="flex items-center gap-3 mb-5">
+                  <span className="text-3xl" aria-hidden="true">🍁</span>
+                  <div>
+                    <p className="font-bold text-[var(--text-primary)]">Ottawa, Ontario</p>
+                    <p className="text-sm text-[var(--text-muted)]">Canada · EST (UTC-5)</p>
+                  </div>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                <Badge variant="success">🌐 {t.contact.info.locationBadges.remote}</Badge>
+                <Badge variant="accent">✈️ {t.contact.info.locationBadges.relocation}</Badge>
+                <Badge variant="default">🏢 {t.contact.info.locationBadges.onsite}</Badge>
+                <Badge variant="default">🔄 {t.contact.info.locationBadges.hybrid}</Badge>
               </div>
             </div>
-            <div className="flex flex-wrap gap-2">
-              <Badge variant="success">🌐 {t.contact.info.locationBadges.remote}</Badge>
-              <Badge variant="accent">✈️ {t.contact.info.locationBadges.relocation}</Badge>
-              <Badge variant="default">🏢 {t.contact.info.locationBadges.onsite}</Badge>
+
+            {/* Right: embedded map */}
+            <div className="relative h-52 md:h-auto min-h-[180px] md:border-l border-[var(--border-color)]">
+              <iframe
+                title="Ottawa, Ontario, Canada"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-76.05%2C45.30%2C-75.45%2C45.55&layer=mapnik&marker=45.4215%2C-75.6972"
+                className="absolute inset-0 w-full h-full"
+                style={{ filter: 'grayscale(1) brightness(0.45) contrast(1.3)', border: 'none' }}
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              />
             </div>
-            <a
-              href="https://maps.google.com/?q=Ottawa+Ontario+Canada"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[var(--border-color)] text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all duration-200"
-            >
-              📍 View on Maps
-            </a>
+
           </div>
         </div>
       </AnimatedSection>

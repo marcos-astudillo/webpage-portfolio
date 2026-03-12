@@ -38,7 +38,7 @@ export const es: Translations = {
     error: { title: 'Algo salió mal', message: 'Por favor intenta de nuevo o escríbeme directamente a m.astudillo1986@gmail.com' },
     validation: { nameRequired: 'El nombre es requerido', emailRequired: 'El correo es requerido', emailInvalid: 'Por favor ingresa un correo válido', subjectRequired: 'El asunto es requerido', messageRequired: 'El mensaje es requerido', messageTooShort: 'El mensaje debe tener al menos 10 caracteres' },
     captcha: { label: 'Verifica que eres humano', placeholder: 'Tu respuesta', invalid: 'Respuesta incorrecta — intenta de nuevo' },
-    info: { email: 'Correo', phone: 'Teléfono', location: 'Ubicación', availability: 'Disponibilidad', availabilityValue: 'Disponible para oportunidades', locationBadges: { remote: 'Trabajo remoto', relocation: 'Abierto a reubicación', onsite: 'Disponible presencial' } },
+    info: { email: 'Correo', phone: 'Teléfono', location: 'Ubicación', availability: 'Disponibilidad', availabilityValue: 'Disponible para oportunidades', locationBadges: { remote: 'Trabajo remoto', relocation: 'Abierto a reubicación', onsite: 'Disponible presencial', hybrid: 'Híbrido' } },
   },
   portfolio: {
     title: 'Portafolio', subtitle: 'Proyectos y trabajos seleccionados',
