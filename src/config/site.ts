@@ -16,13 +16,6 @@ export const SITE_CONFIG = {
 } as const
 
 // ─────────────────────────────────────────────────────────────
-// Portfolio Mode Toggle
-// Set to 'projects' when you have projects to show,
-// 'coming-soon' otherwise.
-// ─────────────────────────────────────────────────────────────
-export const PORTFOLIO_MODE: 'coming-soon' | 'projects' = 'coming-soon'
-
-// ─────────────────────────────────────────────────────────────
 // Asset Paths
 // ─────────────────────────────────────────────────────────────
 export const ASSETS = {

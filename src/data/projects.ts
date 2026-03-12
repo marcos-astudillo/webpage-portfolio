@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────
 // Portfolio Projects Data
-// Add real projects here when ready; set PORTFOLIO_MODE = 'projects'
-// in src/config/site.ts to enable the projects view.
+// Add entries to `projects` to auto-enable the projects view.
+// Leave it empty to show the Coming Soon page.
 // ─────────────────────────────────────────────────────────────
 
 export type ProjectStatus = 'live' | 'in-progress' | 'archived'
@@ -22,7 +22,25 @@ export interface Project {
   year: string
 }
 
+// Add projects here — portfolio auto-switches from Coming Soon to cards
+// when this array has at least one entry.
 export const projects: Project[] = [
+  // ─── Uncomment and fill in when ready ───────────────────────
+  // {
+  //   id: 'my-project',
+  //   title: 'My Project',
+  //   description: { en: '...', es: '...' },
+  //   stack: ['React', 'TypeScript'],
+  //   image: '/assets/images/projects/my-project.jpg',
+  //   links: { github: 'https://github.com/...', demo: 'https://...' },
+  //   status: 'live',
+  //   featured: true,
+  //   year: '2025',
+  // },
+  // ────────────────────────────────────────────────────────────
+]
+
+export const archivedProjects: Project[] = [
   {
     id: 'daily-update-app',
     title: 'Daily Update App',

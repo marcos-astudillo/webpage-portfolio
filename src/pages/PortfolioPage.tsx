@@ -2,10 +2,9 @@ import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ComingSoon } from '@/components/sections/Portfolio/ComingSoon'
 import { ProjectsView } from '@/components/sections/Portfolio'
-import { PORTFOLIO_MODE } from '@/config/site'
+import { projects } from '@/data/projects'
 
 export function PortfolioPage() {
-  // Update SEO title for portfolio route
   useEffect(() => {
     document.title = 'Portfolio | Marcos Astudillo'
     return () => {
@@ -21,7 +20,7 @@ export function PortfolioPage() {
       transition={{ duration: 0.3 }}
       className="flex-1"
     >
-      {PORTFOLIO_MODE === 'coming-soon' ? <ComingSoon /> : <ProjectsView />}
+      {projects.length === 0 ? <ComingSoon /> : <ProjectsView />}
     </motion.div>
   )
 }
