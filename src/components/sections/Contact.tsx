@@ -105,7 +105,7 @@ export function Contact() {
       })
 
       const result = await response.text()
-      console.log('form-handler.php response:', response.status, result)
+      //console.log('form-handler.php response:', response.status, result)
 
       if (response.ok) {
         setStatus('success')
