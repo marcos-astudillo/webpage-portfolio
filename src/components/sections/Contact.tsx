@@ -109,15 +109,12 @@ export function Contact() {
         {/* ── LEFT: Info ── */}
         <div className="lg:col-span-2 space-y-5">
           <AnimatedSection>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="w-8 h-px bg-[var(--accent)]" />
-              <span className="text-xs font-semibold text-[var(--accent)] uppercase tracking-[0.2em]">
+            <div className="flex items-center gap-3 mb-5">
+              <span className="w-10 h-0.5 bg-[var(--accent)]" />
+              <h2 id="contact-title" className="text-2xl sm:text-3xl font-extrabold text-[var(--accent)] tracking-tight">
                 {t.contact.title}
-              </span>
+              </h2>
             </div>
-            <h2 id="contact-title" className="text-3xl sm:text-4xl font-extrabold text-[var(--text-primary)] leading-tight mb-4">
-              {t.contact.formTitle}
-            </h2>
             <p className="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base">
               {t.contact.subtitle}
             </p>
@@ -270,11 +267,10 @@ export function Contact() {
 
       {/* ── BOTTOM: Ottawa Location Banner ── */}
       <AnimatedSection delay={320}>
-        <div className="mt-10 rounded-xl border border-[var(--border-color)] bg-[var(--bg-card)] overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="mt-10 grid grid-cols-1 lg:grid-cols-5 gap-10">
 
             {/* Left: location info + badges */}
-            <div className="p-5 sm:p-6 flex flex-col justify-between gap-5">
+            <div className="lg:col-span-2 rounded-xl border border-[var(--border-color)] bg-[var(--bg-card)] p-5 sm:p-6 flex flex-col justify-between gap-5">
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <span className="w-6 h-px bg-[var(--accent)]" />
@@ -299,7 +295,7 @@ export function Contact() {
             </div>
 
             {/* Right: embedded map */}
-            <div className="relative h-52 md:h-auto min-h-[180px] md:border-l border-[var(--border-color)]">
+            <div className="lg:col-span-3 relative rounded-xl overflow-hidden min-h-[200px]">
               <iframe
                 title="Ottawa, Ontario, Canada"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=-76.05%2C45.30%2C-75.45%2C45.55&layer=mapnik&marker=45.4215%2C-75.6972"
@@ -310,7 +306,6 @@ export function Contact() {
               />
             </div>
 
-          </div>
         </div>
       </AnimatedSection>
 
