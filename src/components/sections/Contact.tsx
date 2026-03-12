@@ -131,7 +131,13 @@ export function Contact() {
         />
       </AnimatedSection>
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+      <AnimatedSection delay={50}>
+        <p className="text-[var(--text-secondary)] text-base leading-relaxed mb-10 max-w-2xl">
+          {t.contact.intro}
+        </p>
+      </AnimatedSection>
+
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
 
         {/* Contact Info */}
         <div className="lg:col-span-2 space-y-4">

@@ -32,6 +32,7 @@ export const es: Translations = {
   education: { title: 'Educación y Certificaciones', subtitle: 'Formación académica y aprendizaje continuo', gpa: 'Promedio', honours: 'Con Honores', relevant: 'Cursos Relevantes', certifications: 'Certificaciones' },
   contact: {
     title: 'Contáctame', subtitle: 'Siempre estoy abierto a nuevas oportunidades y colaboraciones',
+    intro: 'Actualmente estoy disponible para proyectos freelance y oportunidades de tiempo completo. Ya sea que tengas un proyecto en mente o simplemente quieras conectar, mi bandeja de entrada siempre está abierta.',
     form: { name: 'Tu Nombre', namePlaceholder: 'Juan González', email: 'Correo Electrónico', emailPlaceholder: 'juan@ejemplo.com', subject: 'Asunto', subjectPlaceholder: 'Hablemos sobre...', message: 'Mensaje', messagePlaceholder: 'Cuéntame sobre tu proyecto o cómo puedo ayudarte...', submit: 'Enviar Mensaje', submitting: 'Enviando...' },
     success: { title: '¡Mensaje Enviado!', message: 'Gracias por contactarme. Te responderé lo antes posible.' },
     error: { title: 'Algo salió mal', message: 'Por favor intenta de nuevo o escríbeme directamente a m.astudillo1986@gmail.com' },

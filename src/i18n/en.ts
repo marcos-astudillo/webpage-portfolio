@@ -32,6 +32,7 @@ export const en: Translations = {
   education: { title: 'Education & Certifications', subtitle: 'Academic background and continuous learning', gpa: 'GPA', honours: 'Honours', relevant: 'Relevant Coursework', certifications: 'Certifications' },
   contact: {
     title: 'Get in Touch', subtitle: "I'm always open to new opportunities and collaborations",
+    intro: "I'm currently open to freelance projects and full-time opportunities. Whether you have a project in mind or just want to connect, my inbox is always open.",
     form: { name: 'Your Name', namePlaceholder: 'John Smith', email: 'Email Address', emailPlaceholder: 'john@example.com', subject: 'Subject', subjectPlaceholder: "Let's talk about...", message: 'Message', messagePlaceholder: 'Tell me about your project or how I can help...', submit: 'Send Message', submitting: 'Sending...' },
     success: { title: 'Message Sent!', message: "Thanks for reaching out. I'll get back to you as soon as possible." },
     error: { title: 'Something went wrong', message: 'Please try again or email me directly at m.astudillo1986@gmail.com' },
