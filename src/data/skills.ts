@@ -13,7 +13,7 @@ export const skillCategories: SkillCategories = {
   },
   frameworks: {
     id: 'frameworks', icon: 'box',
-    skills: ['Laravel', 'Node.js', 'Express.js', 'React', 'Angular', 'Vue 3', 'Next.js', 'Django', 'Bootstrap'],
+    skills: ['Laravel', 'Node.js', 'Express.js', 'React', 'Angular', 'Vue 3', 'Next.js', 'Django', 'Flask', 'Tailwind CSS', 'Bootstrap'],
   },
   databases: {
     id: 'databases', icon: 'db',
