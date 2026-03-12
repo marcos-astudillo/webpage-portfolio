@@ -20,14 +20,7 @@ any hosting provider, including **HostGator shared hosting**.
 
 ## Preview
 
-Add a screenshot of the site here after deployment.
-
-    docs/
-       preview.png
-
-Then reference it like:
-
-    ![Portfolio Screenshot](images/webpage.png)
+![Portfolio Screenshot](images/webpage.png)
 
 ------------------------------------------------------------------------
 
