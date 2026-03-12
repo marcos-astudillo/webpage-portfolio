@@ -96,7 +96,7 @@ export function Contact() {
       params.append('subject', form.subject)
       params.append('message', form.message)
 
-      const response = await fetch('/contact.php', {
+      const response = await fetch('/form-handler.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -105,7 +105,7 @@ export function Contact() {
       })
 
       const result = await response.text()
-      console.log('contact.php response:', response.status, result)
+      console.log('form-handler.php response:', response.status, result)
 
       if (response.ok) {
         setStatus('success')

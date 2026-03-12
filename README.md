@@ -27,7 +27,7 @@ Add a screenshot of the site here after deployment.
 
 Then reference it like:
 
-    ![Portfolio Screenshot](./docs/images/preview.png)
+    ![Portfolio Screenshot](images/webpage.png)
 
 ------------------------------------------------------------------------
 
@@ -55,7 +55,7 @@ Then reference it like:
   Animations        Framer Motion
   Icons             Lucide React
   i18n              Custom lightweight context (EN/ES)
-  Contact Backend   PHP (`public/contact.php`)
+  Contact Backend   PHP (`public/form-handler.php`)
 
 ------------------------------------------------------------------------
 
@@ -90,7 +90,7 @@ Preview production build locally:
     │   │       ├── marcos-astudillo-resume-en.pdf
     │   │       └── marcos-astudillo-resume-es.pdf
     │   ├── .htaccess
-    │   ├── contact.php
+    │   ├── form-handler.php
     │   └── favicon.svg
     ├── src/
     │   ├── components/
@@ -214,7 +214,7 @@ using **FTP or cPanel File Manager**.
 ```{=html}
 <!-- -->
 ```
-    public/contact.php
+    public/form-handler.php
 
 to the same directory.
 
@@ -225,7 +225,7 @@ to the same directory.
 ```{=html}
 <!-- -->
 ```
-    contact.php
+    form-handler.php
 
 Example:
 
