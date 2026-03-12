@@ -38,7 +38,7 @@ export const en: Translations = {
     error: { title: 'Something went wrong', message: 'Please try again or email me directly at m.astudillo1986@gmail.com' },
     validation: { nameRequired: 'Name is required', emailRequired: 'Email is required', emailInvalid: 'Please enter a valid email address', subjectRequired: 'Subject is required', messageRequired: 'Message is required', messageTooShort: 'Message must be at least 10 characters' },
     captcha: { label: 'Verify you are human', placeholder: 'Your answer', invalid: 'Incorrect answer — please try again' },
-    info: { email: 'Email', location: 'Location', availability: 'Availability', availabilityValue: 'Open to opportunities' },
+    info: { email: 'Email', phone: 'Phone', location: 'Location', availability: 'Availability', availabilityValue: 'Open to opportunities', locationBadges: { remote: 'Remote-friendly', relocation: 'Open to relocation', onsite: 'On-site available' } },
   },
   portfolio: {
     title: 'Portfolio', subtitle: 'Selected projects and work',

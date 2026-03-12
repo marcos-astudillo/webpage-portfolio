@@ -1,26 +1,14 @@
 import { useState, FormEvent, useCallback } from 'react'
-import { Send, Mail, MapPin, CheckCircle, AlertCircle, Loader2, Clock, RefreshCw } from 'lucide-react'
+import { Send, Mail, MapPin, CheckCircle, AlertCircle, Loader2, Clock, RefreshCw, Phone, Github } from 'lucide-react'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
-import { SectionTitle } from '@/components/ui/SectionTitle'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
+import { Badge } from '@/components/ui/Badge'
 import { useLanguage } from '@/context/LanguageContext'
 import { SITE_CONFIG } from '@/config/site'
 
-interface FormState {
-  name: string
-  email: string
-  subject: string
-  message: string
-}
-
-interface FormErrors {
-  name?: string
-  email?: string
-  subject?: string
-  message?: string
-}
-
+interface FormState { name: string; email: string; subject: string; message: string }
+interface FormErrors { name?: string; email?: string; subject?: string; message?: string }
 type SubmitStatus = 'idle' | 'loading' | 'success' | 'error'
 
 const initialForm: FormState = { name: '', email: '', subject: '', message: '' }
@@ -34,20 +22,45 @@ function generateCaptcha(): { a: number; b: number; answer: number } {
 function validateForm(data: FormState, t: ReturnType<typeof useLanguage>['t']): FormErrors {
   const errors: FormErrors = {}
   const v = t.contact.validation
-
   if (!data.name.trim()) errors.name = v.nameRequired
-  if (!data.email.trim()) {
-    errors.email = v.emailRequired
-  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
-    errors.email = v.emailInvalid
-  }
+  if (!data.email.trim()) { errors.email = v.emailRequired }
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) { errors.email = v.emailInvalid }
   if (!data.subject.trim()) errors.subject = v.subjectRequired
-  if (!data.message.trim()) {
-    errors.message = v.messageRequired
-  } else if (data.message.trim().length < 10) {
-    errors.message = v.messageTooShort
-  }
+  if (!data.message.trim()) { errors.message = v.messageRequired }
+  else if (data.message.trim().length < 10) { errors.message = v.messageTooShort }
   return errors
+}
+
+function InfoRow({
+  icon: Icon, label, children, accentColor = 'accent', delay = 0,
+}: {
+  icon: React.ComponentType<{ size?: number; className?: string }>
+  label: string; children: React.ReactNode
+  accentColor?: 'accent' | 'emerald'; delay?: number
+}) {
+  const isEmerald = accentColor === 'emerald'
+  return (
+    <AnimatedSection delay={delay} direction="left">
+      <div className={`
+        group flex items-center gap-4 p-4 rounded-xl
+        border border-[var(--border-color)] bg-[var(--bg-card)]
+        ${isEmerald ? 'hover:border-emerald-500' : 'hover:border-[var(--accent)]'}
+        hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-300
+      `}>
+        <div className={`
+          w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0
+          ${isEmerald ? 'bg-emerald-500/10 group-hover:bg-emerald-500' : 'bg-[var(--accent-subtle)] group-hover:bg-[var(--accent)]'}
+          transition-colors duration-300
+        `}>
+          <Icon size={18} className={`${isEmerald ? 'text-emerald-400' : 'text-[var(--accent)]'} group-hover:text-white transition-colors duration-300`} />
+        </div>
+        <div className="min-w-0">
+          <p className="text-xs text-[var(--text-muted)] font-medium uppercase tracking-wide mb-0.5">{label}</p>
+          {children}
+        </div>
+      </div>
+    </AnimatedSection>
+  )
 }
 
 export function Contact() {
@@ -60,309 +73,180 @@ export function Contact() {
   const [captchaError, setCaptchaError] = useState(false)
 
   const refreshCaptcha = useCallback(() => {
-    setCaptcha(generateCaptcha())
-    setCaptchaInput('')
-    setCaptchaError(false)
+    setCaptcha(generateCaptcha()); setCaptchaInput(''); setCaptchaError(false)
   }, [])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setForm(prev => ({ ...prev, [name]: value }))
-    if (errors[name as keyof FormErrors]) {
-      setErrors(prev => ({ ...prev, [name]: undefined }))
-    }
+    if (errors[name as keyof FormErrors]) setErrors(prev => ({ ...prev, [name]: undefined }))
   }
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     const validationErrors = validateForm(form, t)
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors)
-      return
-    }
-
-    if (parseInt(captchaInput, 10) !== captcha.answer) {
-      setCaptchaError(true)
-      refreshCaptcha()
-      return
-    }
+    if (Object.keys(validationErrors).length > 0) { setErrors(validationErrors); return }
+    if (parseInt(captchaInput, 10) !== captcha.answer) { setCaptchaError(true); refreshCaptcha(); return }
 
     setStatus('loading')
-
     try {
       const response = await fetch('/contact.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(form),
       })
-
-      if (response.ok) {
-        setStatus('success')
-        setForm(initialForm)
-        setErrors({})
-        refreshCaptcha()
-      } else {
-        setStatus('error')
-      }
+      if (response.ok) { setStatus('success'); setForm(initialForm); setErrors({}); refreshCaptcha() }
+      else { setStatus('error') }
     } catch {
-      // Network error or endpoint not available in dev
-      // In development without a PHP backend, we simulate success
-      if (import.meta.env.DEV) {
-        setTimeout(() => {
-          setStatus('success')
-          setForm(initialForm)
-          refreshCaptcha()
-        }, 1000)
-      } else {
-        setStatus('error')
-      }
+      if (import.meta.env.DEV) { setTimeout(() => { setStatus('success'); setForm(initialForm); refreshCaptcha() }, 1000) }
+      else { setStatus('error') }
     }
   }
 
   return (
-    <section
-      className="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24"
-      aria-labelledby="contact-title"
-    >
-      <AnimatedSection>
-        <SectionTitle
-          title={t.contact.title}
-          subtitle={t.contact.subtitle}
-        />
-      </AnimatedSection>
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24" aria-labelledby="contact-title">
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
 
-        {/* Contact Info */}
-        <div className="lg:col-span-2 space-y-4">
-          <AnimatedSection delay={100} direction="left">
-            <Card padding="md">
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[var(--accent-subtle)] flex items-center justify-center flex-shrink-0">
-                  <Mail size={18} className="text-[var(--accent)]" />
-                </div>
-                <div>
-                  <p className="text-xs text-[var(--text-muted)] font-medium uppercase tracking-wide mb-0.5">
-                    {t.contact.info.email}
-                  </p>
-                  <a
-                    href={`mailto:${SITE_CONFIG.email}`}
-                    className="text-sm font-medium text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors"
-                  >
-                    {SITE_CONFIG.email}
-                  </a>
-                </div>
-              </div>
-            </Card>
-          </AnimatedSection>
-
-          <AnimatedSection delay={150} direction="left">
-            <Card padding="md">
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[var(--accent-subtle)] flex items-center justify-center flex-shrink-0">
-                  <MapPin size={18} className="text-[var(--accent)]" />
-                </div>
-                <div>
-                  <p className="text-xs text-[var(--text-muted)] font-medium uppercase tracking-wide mb-0.5">
-                    {t.contact.info.location}
-                  </p>
-                  <p className="text-sm font-medium text-[var(--text-primary)]">
-                    {SITE_CONFIG.location}
-                  </p>
-                </div>
-              </div>
-            </Card>
-          </AnimatedSection>
-
-          <AnimatedSection delay={200} direction="left">
-            <Card padding="md">
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
-                  <Clock size={18} className="text-emerald-400" />
-                </div>
-                <div>
-                  <p className="text-xs text-[var(--text-muted)] font-medium uppercase tracking-wide mb-0.5">
-                    {t.contact.info.availability}
-                  </p>
-                  <p className="text-sm font-medium text-emerald-400">
-                    {t.contact.info.availabilityValue}
-                  </p>
-                </div>
-              </div>
-            </Card>
-          </AnimatedSection>
-
-          {/* Ottawa mini-map */}
-          <AnimatedSection delay={260} direction="left">
-            <div className="rounded-xl overflow-hidden border border-[var(--border)] shadow-sm">
-              <iframe
-                title="Ottawa, Ontario, Canada"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=-75.8372%2C45.3202%2C-75.5572%2C45.5228&amp;layer=mapnik&amp;marker=45.4215%2C-75.6972"
-                width="100%"
-                height="260"
-                loading="lazy"
-                style={{ border: 0, display: 'block' }}
-                aria-label="Map of Ottawa, Ontario, Canada"
-              />
+        {/* ── LEFT: Info ── */}
+        <div className="lg:col-span-2 space-y-5">
+          <AnimatedSection>
+            <div className="flex items-center gap-2 mb-4">
+              <span className="w-8 h-px bg-[var(--accent)]" />
+              <span className="text-xs font-semibold text-[var(--accent)] uppercase tracking-[0.2em]">
+                {t.contact.title}
+              </span>
             </div>
+            <h2 id="contact-title" className="text-3xl sm:text-4xl font-extrabold text-[var(--text-primary)] leading-tight mb-4">
+              {t.contact.formTitle}
+            </h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base">
+              {t.contact.subtitle}
+            </p>
           </AnimatedSection>
+
+          <div className="space-y-3 pt-2">
+            <InfoRow icon={Mail} label={t.contact.info.email} delay={100}>
+              <a href={`mailto:${SITE_CONFIG.email}`}
+                className="text-sm font-semibold text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors truncate block">
+                {SITE_CONFIG.email}
+              </a>
+            </InfoRow>
+
+            <InfoRow icon={Phone} label={t.contact.info.phone} delay={140}>
+              <a href={`tel:${SITE_CONFIG.phone}`}
+                className="text-sm font-semibold text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors">
+                {SITE_CONFIG.phone}
+              </a>
+            </InfoRow>
+
+            <InfoRow icon={MapPin} label={t.contact.info.location} delay={180}>
+              <p className="text-sm font-semibold text-[var(--text-primary)]">{SITE_CONFIG.location}</p>
+            </InfoRow>
+
+            <InfoRow icon={Clock} label={t.contact.info.availability} accentColor="emerald" delay={220}>
+              <p className="text-sm font-semibold text-emerald-400">{t.contact.info.availabilityValue}</p>
+            </InfoRow>
+
+            <AnimatedSection delay={260} direction="left">
+              <a href={SITE_CONFIG.github} target="_blank" rel="noopener noreferrer"
+                className="group flex items-center gap-4 p-4 rounded-xl border border-[var(--border-color)] bg-[var(--bg-card)] hover:border-[var(--accent)] hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-300">
+                <div className="w-10 h-10 rounded-xl bg-[var(--accent-subtle)] flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--accent)] transition-colors duration-300">
+                  <Github size={18} className="text-[var(--accent)] group-hover:text-white transition-colors duration-300" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-xs text-[var(--text-muted)] font-medium uppercase tracking-wide mb-0.5">GitHub</p>
+                  <p className="text-sm font-semibold text-[var(--text-primary)] truncate">github.com/ThisIsAntonio</p>
+                </div>
+              </a>
+            </AnimatedSection>
+          </div>
         </div>
 
-        {/* Contact Form */}
+        {/* ── RIGHT: Form ── */}
         <div className="lg:col-span-3">
           <AnimatedSection delay={100} direction="right">
             <Card padding="lg">
-              <h3 className="text-base font-semibold text-[var(--text-primary)] mb-5 pb-4 border-b border-[var(--border-color)]">
-                {t.contact.formTitle}
-              </h3>
+              <div className="mb-6 pb-4 border-b border-[var(--border-color)]">
+                <h3 className="text-xl font-bold text-[var(--text-primary)]">{t.contact.formTitle}</h3>
+                <p className="text-xs text-[var(--text-muted)] mt-1">{t.contact.info.availabilityValue} · {t.contact.info.locationBadges.remote}</p>
+              </div>
+
               {status === 'success' ? (
                 <div className="flex flex-col items-center text-center py-8">
                   <div className="w-16 h-16 rounded-full bg-emerald-500/10 flex items-center justify-center mb-4">
                     <CheckCircle size={32} className="text-emerald-400" />
                   </div>
-                  <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">
-                    {t.contact.success.title}
-                  </h3>
-                  <p className="text-[var(--text-secondary)] text-sm max-w-sm">
-                    {t.contact.success.message}
-                  </p>
-                  <Button
-                    variant="ghost"
-                    className="mt-6"
-                    onClick={() => setStatus('idle')}
-                  >
-                    Send Another Message
-                  </Button>
+                  <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">{t.contact.success.title}</h3>
+                  <p className="text-[var(--text-secondary)] text-sm max-w-sm">{t.contact.success.message}</p>
+                  <Button variant="ghost" className="mt-6" onClick={() => setStatus('idle')}>Send Another Message</Button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} noValidate className="space-y-4">
-                  {/* Name & Email */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-[var(--text-secondary)] mb-1.5">
+                      <label htmlFor="name" className="block text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wide mb-1.5">
                         {t.contact.form.name} <span className="text-red-400">*</span>
                       </label>
-                      <input
-                        id="name"
-                        name="name"
-                        type="text"
-                        value={form.name}
-                        onChange={handleChange}
+                      <input id="name" name="name" type="text" value={form.name} onChange={handleChange}
                         placeholder={t.contact.form.namePlaceholder}
-                        className={`form-input ${errors.name ? 'border-red-400 focus:border-red-400 focus:shadow-none' : ''}`}
-                        disabled={status === 'loading'}
-                        autoComplete="name"
-                      />
-                      {errors.name && (
-                        <p className="mt-1 text-xs text-red-400 flex items-center gap-1">
-                          <AlertCircle size={11} /> {errors.name}
-                        </p>
-                      )}
+                        className={`form-input ${errors.name ? 'border-red-400' : ''}`}
+                        disabled={status === 'loading'} autoComplete="name" />
+                      {errors.name && <p className="mt-1 text-xs text-red-400 flex items-center gap-1"><AlertCircle size={11} /> {errors.name}</p>}
                     </div>
-
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-[var(--text-secondary)] mb-1.5">
+                      <label htmlFor="email" className="block text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wide mb-1.5">
                         {t.contact.form.email} <span className="text-red-400">*</span>
                       </label>
-                      <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={form.email}
-                        onChange={handleChange}
+                      <input id="email" name="email" type="email" value={form.email} onChange={handleChange}
                         placeholder={t.contact.form.emailPlaceholder}
                         className={`form-input ${errors.email ? 'border-red-400' : ''}`}
-                        disabled={status === 'loading'}
-                        autoComplete="email"
-                      />
-                      {errors.email && (
-                        <p className="mt-1 text-xs text-red-400 flex items-center gap-1">
-                          <AlertCircle size={11} /> {errors.email}
-                        </p>
-                      )}
+                        disabled={status === 'loading'} autoComplete="email" />
+                      {errors.email && <p className="mt-1 text-xs text-red-400 flex items-center gap-1"><AlertCircle size={11} /> {errors.email}</p>}
                     </div>
                   </div>
 
-                  {/* Subject */}
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-[var(--text-secondary)] mb-1.5">
+                    <label htmlFor="subject" className="block text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wide mb-1.5">
                       {t.contact.form.subject} <span className="text-red-400">*</span>
                     </label>
-                    <input
-                      id="subject"
-                      name="subject"
-                      type="text"
-                      value={form.subject}
-                      onChange={handleChange}
+                    <input id="subject" name="subject" type="text" value={form.subject} onChange={handleChange}
                       placeholder={t.contact.form.subjectPlaceholder}
                       className={`form-input ${errors.subject ? 'border-red-400' : ''}`}
-                      disabled={status === 'loading'}
-                    />
-                    {errors.subject && (
-                      <p className="mt-1 text-xs text-red-400 flex items-center gap-1">
-                        <AlertCircle size={11} /> {errors.subject}
-                      </p>
-                    )}
+                      disabled={status === 'loading'} />
+                    {errors.subject && <p className="mt-1 text-xs text-red-400 flex items-center gap-1"><AlertCircle size={11} /> {errors.subject}</p>}
                   </div>
 
-                  {/* Message */}
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-[var(--text-secondary)] mb-1.5">
+                    <label htmlFor="message" className="block text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wide mb-1.5">
                       {t.contact.form.message} <span className="text-red-400">*</span>
                     </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      value={form.message}
-                      onChange={handleChange}
+                    <textarea id="message" name="message" rows={5} value={form.message} onChange={handleChange}
                       placeholder={t.contact.form.messagePlaceholder}
                       className={`form-input resize-none ${errors.message ? 'border-red-400' : ''}`}
-                      disabled={status === 'loading'}
-                    />
-                    {errors.message && (
-                      <p className="mt-1 text-xs text-red-400 flex items-center gap-1">
-                        <AlertCircle size={11} /> {errors.message}
-                      </p>
-                    )}
+                      disabled={status === 'loading'} />
+                    {errors.message && <p className="mt-1 text-xs text-red-400 flex items-center gap-1"><AlertCircle size={11} /> {errors.message}</p>}
                   </div>
 
-                  {/* Math Captcha */}
+                  {/* Captcha */}
                   <div>
-                    <label className="block text-sm font-medium text-[var(--text-secondary)] mb-1.5">
+                    <label className="block text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wide mb-1.5">
                       {t.contact.captcha.label} <span className="text-red-400">*</span>
                     </label>
                     <div className="flex items-center gap-3">
                       <div className="flex-shrink-0 px-4 py-2.5 rounded-lg bg-[var(--accent-subtle)] text-[var(--text-primary)] font-mono font-semibold text-sm select-none">
                         {captcha.a} + {captcha.b} = ?
                       </div>
-                      <input
-                        type="number"
-                        inputMode="numeric"
-                        value={captchaInput}
+                      <input type="number" inputMode="numeric" value={captchaInput}
                         onChange={e => { setCaptchaInput(e.target.value); setCaptchaError(false) }}
                         placeholder={t.contact.captcha.placeholder}
                         className={`form-input w-28 ${captchaError ? 'border-red-400' : ''}`}
-                        disabled={status === 'loading'}
-                        autoComplete="off"
-                      />
-                      <button
-                        type="button"
-                        onClick={refreshCaptcha}
+                        disabled={status === 'loading'} autoComplete="off" />
+                      <button type="button" onClick={refreshCaptcha}
                         className="p-2 rounded-lg text-[var(--text-muted)] hover:text-[var(--accent)] hover:bg-[var(--accent-subtle)] transition-colors"
-                        title="New question"
-                      >
-                        <RefreshCw size={15} />
-                      </button>
+                        title="New question"><RefreshCw size={15} /></button>
                     </div>
-                    {captchaError && (
-                      <p className="mt-1 text-xs text-red-400 flex items-center gap-1">
-                        <AlertCircle size={11} /> {t.contact.captcha.invalid}
-                      </p>
-                    )}
+                    {captchaError && <p className="mt-1 text-xs text-red-400 flex items-center gap-1"><AlertCircle size={11} /> {t.contact.captcha.invalid}</p>}
                   </div>
 
-                  {/* Error Banner */}
                   {status === 'error' && (
                     <div className="flex items-start gap-3 p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400">
                       <AlertCircle size={16} className="flex-shrink-0 mt-0.5" />
@@ -373,19 +257,8 @@ export function Contact() {
                     </div>
                   )}
 
-                  {/* Submit */}
-                  <Button
-                    type="submit"
-                    variant="primary"
-                    size="lg"
-                    fullWidth
-                    disabled={status === 'loading'}
-                    icon={
-                      status === 'loading'
-                        ? <Loader2 size={17} className="animate-spin" />
-                        : <Send size={17} />
-                    }
-                  >
+                  <Button type="submit" variant="primary" size="lg" fullWidth disabled={status === 'loading'}
+                    icon={status === 'loading' ? <Loader2 size={17} className="animate-spin" /> : <Send size={17} />}>
                     {status === 'loading' ? t.contact.form.submitting : t.contact.form.submit}
                   </Button>
                 </form>
@@ -394,6 +267,41 @@ export function Contact() {
           </AnimatedSection>
         </div>
       </div>
+
+      {/* ── BOTTOM: Ottawa Location Banner ── */}
+      <AnimatedSection delay={320}>
+        <div className="mt-10 rounded-xl border border-[var(--border-color)] bg-[var(--bg-card)] p-5 sm:p-6">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="w-6 h-px bg-[var(--accent)]" />
+            <span className="text-xs font-semibold text-[var(--accent)] uppercase tracking-[0.15em]">
+              Ottawa, Ontario · Canada
+            </span>
+          </div>
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <span className="text-3xl" aria-hidden="true">🍁</span>
+              <div>
+                <p className="font-bold text-[var(--text-primary)]">Ottawa, Ontario</p>
+                <p className="text-sm text-[var(--text-muted)]">Canada · EST (UTC-5)</p>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="success">🌐 {t.contact.info.locationBadges.remote}</Badge>
+              <Badge variant="accent">✈️ {t.contact.info.locationBadges.relocation}</Badge>
+              <Badge variant="default">🏢 {t.contact.info.locationBadges.onsite}</Badge>
+            </div>
+            <a
+              href="https://maps.google.com/?q=Ottawa+Ontario+Canada"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[var(--border-color)] text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all duration-200"
+            >
+              📍 View on Maps
+            </a>
+          </div>
+        </div>
+      </AnimatedSection>
+
     </section>
   )
 }
