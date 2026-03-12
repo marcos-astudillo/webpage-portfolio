@@ -33,10 +33,10 @@ export function Experience() {
         <div className="space-y-8">
           {experience.map((job, index) => (
             <AnimatedSection key={job.id} delay={index * 100} direction="left">
-              <div className="relative pl-16 sm:pl-20">
+              <div className="group relative pl-16 sm:pl-20">
                 {/* Timeline Dot */}
                 <div
-                  className="absolute left-4 sm:left-6 top-6 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-[var(--accent)] bg-[var(--bg-primary)] z-10 group-hover:scale-110 transition-transform"
+                  className="absolute left-4 sm:left-6 top-6 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-[var(--accent)] bg-[var(--bg-primary)] z-10 group-hover:scale-150 group-hover:bg-[var(--accent)] group-hover:shadow-[0_0_0_5px_var(--accent-subtle)] transition-all duration-300"
                   aria-hidden="true"
                 />
 
