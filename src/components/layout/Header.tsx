@@ -98,7 +98,7 @@ export function Header({ activeSection, onNavClick }: HeaderProps) {
                 className="text-[var(--accent)] group-hover:text-[var(--accent-hover)] transition-colors duration-200"
               />
               <span className="font-bold text-[var(--text-primary)] hidden sm:block tracking-tight">
-                Astudillo<span className="text-[var(--accent)]">.</span>
+                Marcos <span className="text-[var(--accent)]">A.</span>
               </span>
             </Link>
 

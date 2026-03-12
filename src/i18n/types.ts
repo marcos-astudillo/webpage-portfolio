@@ -23,7 +23,7 @@ export interface Translations {
   experience: { title: string; subtitle: string; present: string; keyAchievements: string; remote: string }
   education: { title: string; subtitle: string; gpa: string; honours: string; relevant: string; certifications: string }
   contact: {
-    title: string; subtitle: string; intro: string
+    title: string; subtitle: string; formTitle: string
     form: { name: string; namePlaceholder: string; email: string; emailPlaceholder: string; subject: string; subjectPlaceholder: string; message: string; messagePlaceholder: string; submit: string; submitting: string }
     success: { title: string; message: string }
     error: { title: string; message: string }

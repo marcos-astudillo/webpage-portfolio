@@ -131,12 +131,6 @@ export function Contact() {
         />
       </AnimatedSection>
 
-      <AnimatedSection delay={50}>
-        <p className="text-[var(--text-secondary)] text-base leading-relaxed mb-10 max-w-2xl">
-          {t.contact.intro}
-        </p>
-      </AnimatedSection>
-
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
 
         {/* Contact Info */}
@@ -205,7 +199,7 @@ export function Contact() {
                 title="Ottawa, Ontario, Canada"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=-75.8372%2C45.3202%2C-75.5572%2C45.5228&amp;layer=mapnik&amp;marker=45.4215%2C-75.6972"
                 width="100%"
-                height="180"
+                height="260"
                 loading="lazy"
                 style={{ border: 0, display: 'block' }}
                 aria-label="Map of Ottawa, Ontario, Canada"
@@ -218,6 +212,9 @@ export function Contact() {
         <div className="lg:col-span-3">
           <AnimatedSection delay={100} direction="right">
             <Card padding="lg">
+              <h3 className="text-base font-semibold text-[var(--text-primary)] mb-5 pb-4 border-b border-[var(--border-color)]">
+                {t.contact.formTitle}
+              </h3>
               {status === 'success' ? (
                 <div className="flex flex-col items-center text-center py-8">
                   <div className="w-16 h-16 rounded-full bg-emerald-500/10 flex items-center justify-center mb-4">
