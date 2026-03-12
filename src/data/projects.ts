@@ -29,10 +29,11 @@ export const projects: Project[] = [
     id: 'hotel-booker-fullstack',
     title: 'Hotel Booker — Full-Stack',
     description: {
-      en: 'Complete hotel reservation management system with Django REST API backend and Angular frontend. Features JWT authentication, full CRUD reservations, PostgreSQL persistence, and cloud deployment across Render and Railway.',
-      es: 'Sistema completo de gestión de reservas de hotel con backend Django REST API y frontend Angular. Incluye autenticación JWT, operaciones CRUD completas, persistencia en PostgreSQL y despliegue en la nube.',
+      en: 'Complete hotel reservation management system with Django REST API backend and Angular frontend. Features JWT authentication, full CRUD reservations, PostgreSQL persistence, and cloud deployment.',
+      es: 'Sistema completo de gestión de reservas de hotel con backend Django REST API y frontend Angular. Incluye autenticación JWT, operaciones CRUD completas y despliegue en la nube.',
     },
-    stack: ['Django', 'Angular', 'TypeScript', 'PostgreSQL', 'JWT', 'Bootstrap', 'Render', 'Railway'],
+    stack: ['Django', 'Angular', 'TypeScript', 'PostgreSQL', 'JWT', 'Bootstrap', 'Render'],
+    image: '/assets/images/projects/hotel-booker.svg',
     links: {
       github: 'https://github.com/marcos-astudillo/hotel-booker-fullstack',
       demo: 'https://hotel-booker-fullstack.onrender.com/',
@@ -42,13 +43,46 @@ export const projects: Project[] = [
     year: '2024',
   },
   {
-    id: 'sociolingo',
-    title: 'Sociolingo',
+    id: 'flashlink-service',
+    title: 'Flashlink — URL Shortener API',
     description: {
-      en: 'Social language-learning chat app built with Flutter and Firebase. Enables real-time messaging between users of different languages with AI-powered translation supporting English, Spanish, and French.',
-      es: 'App de chat para aprendizaje de idiomas construida con Flutter y Firebase. Permite mensajería en tiempo real entre usuarios de distintos idiomas con traducción impulsada por IA en inglés, español y francés.',
+      en: 'Production-ready URL shortener backend built with Fastify, PostgreSQL, Redis cache-aside strategy, and BullMQ for async analytics. Includes rate limiting, optional expiration, and health checks.',
+      es: 'Backend de acortador de URLs listo para producción con Fastify, PostgreSQL, estrategia Redis cache-aside y BullMQ para analíticas asíncronas. Incluye rate limiting, expiración opcional y health checks.',
+    },
+    stack: ['Fastify', 'TypeScript', 'PostgreSQL', 'Redis', 'BullMQ', 'Docker', 'OpenAPI'],
+    image: '/assets/images/projects/flashlink-service.svg',
+    links: {
+      github: 'https://github.com/marcos-astudillo/flashlink-service',
+    },
+    status: 'live',
+    featured: true,
+    year: '2025',
+  },
+  {
+    id: 'daily-update-app',
+    title: 'Daily Update App',
+    description: {
+      en: 'Full-stack productivity dashboard that lets teams log daily updates, track word frequency trends, and visualize output over time via an interactive calendar and charts.',
+      es: 'Dashboard de productividad full-stack para que los equipos registren actualizaciones diarias, analicen tendencias de palabras y visualicen el rendimiento con calendario interactivo y gráficos.',
+    },
+    stack: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Tailwind CSS', 'tRPC'],
+    image: '/assets/images/projects/daily-update-app.svg',
+    links: {
+      github: 'https://github.com/marcos-astudillo/Daily-Update-App',
+    },
+    status: 'live',
+    featured: true,
+    year: '2024',
+  },
+  {
+    id: 'sociolingo',
+    title: 'SocioLingo',
+    description: {
+      en: 'Social language-learning chat app built with Flutter and Firebase. Enables real-time multilingual messaging with AI-powered translation supporting English, Spanish, and French.',
+      es: 'App de chat para aprendizaje de idiomas construida con Flutter y Firebase. Mensajería multilingüe en tiempo real con traducción por IA en inglés, español y francés.',
     },
     stack: ['Flutter', 'Dart', 'Firebase', 'AI Translation'],
+    image: '/assets/images/projects/sociolingo.svg',
     links: {
       github: 'https://github.com/marcos-astudillo/Sociolingo',
       demo: 'https://sociolingo-project.web.app',
@@ -61,10 +95,11 @@ export const projects: Project[] = [
     id: 'ca-gf-tm',
     title: 'JAP Simulation Suite',
     description: {
-      en: 'Desktop simulation suite implementing Cellular Automata, Conway\'s Game of Life, and a Turing Machine using JavaFX and Swing. MVC architecture, client-server networking, and full internationalization.',
-      es: 'Suite de simulación de escritorio con Autómatas Celulares, el Juego de la Vida de Conway y una Máquina de Turing en JavaFX y Swing. Arquitectura MVC, red cliente-servidor e internacionalización completa.',
+      en: 'Desktop simulation suite implementing Cellular Automata, Conway\'s Game of Life, and a Turing Machine using JavaFX and Swing. MVC architecture, client-server networking, and full i18n.',
+      es: 'Suite de simulación de escritorio con Autómatas Celulares, Juego de la Vida de Conway y Máquina de Turing en JavaFX y Swing. Arquitectura MVC, red cliente-servidor e i18n completa.',
     },
     stack: ['Java', 'JavaFX', 'Swing', 'MVC', 'Client-Server', 'i18n'],
+    image: '/assets/images/projects/jap-suite.svg',
     links: {
       github: 'https://github.com/marcos-astudillo/CA_GF_TM',
     },
@@ -76,10 +111,11 @@ export const projects: Project[] = [
     id: 'system-design-notes',
     title: 'System Design Notes',
     description: {
-      en: 'Curated collection of system design documents covering distributed systems, scalability, REST APIs, and backend architecture patterns. Structured as interview-ready references with requirements, architecture, data model, and trade-offs.',
-      es: 'Colección curada de documentos de diseño de sistemas sobre sistemas distribuidos, escalabilidad, APIs REST y patrones de arquitectura backend. Estructurado como referencias para entrevistas con requisitos, arquitectura y análisis de trade-offs.',
+      en: 'Curated collection of system design documents covering distributed systems, scalability, REST APIs, and backend architecture patterns — structured as interview-ready references.',
+      es: 'Colección curada de documentos de diseño de sistemas sobre sistemas distribuidos, escalabilidad, APIs REST y arquitectura backend — estructurado como referencia para entrevistas.',
     },
     stack: ['System Design', 'Distributed Systems', 'Backend', 'Architecture', 'Markdown'],
+    image: '/assets/images/projects/system-design-notes.svg',
     links: {
       github: 'https://github.com/marcos-astudillo/system-design-notes',
     },
@@ -91,18 +127,18 @@ export const projects: Project[] = [
 
 export const archivedProjects: Project[] = [
   {
-    id: 'daily-update-app',
-    title: 'Daily Update App',
+    id: 'daily-update-app-archived',
+    title: 'Daily Update App (archive)',
     description: {
-      en: 'Full-stack internal productivity tool built with the T3 Stack. Enables teams to track daily progress, review historical updates, and analyze productivity insights through a responsive dashboard.',
-      es: 'Herramienta interna de productividad full-stack construida con el T3 Stack. Permite a los equipos rastrear el progreso diario, revisar actualizaciones históricas y analizar insights de productividad.',
+      en: 'Full-stack internal productivity tool built with the T3 Stack.',
+      es: 'Herramienta interna de productividad full-stack construida con el T3 Stack.',
     },
     stack: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Tailwind CSS', 'tRPC'],
     links: {
       github: 'https://github.com/marcos-astudillo',
     },
     status: 'archived',
-    featured: true,
+    featured: false,
     year: '2024',
   },
 ]

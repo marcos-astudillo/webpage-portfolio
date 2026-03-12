@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#0f172a"/>
+  <!-- Top bar -->
+  <rect width="800" height="52" fill="#1e293b"/>
+  <text x="24" y="34" font-family="system-ui,sans-serif" font-size="16" font-weight="800" fill="#f1f5f9">⚡ Flashlink Service API</text>
+  <rect x="580" y="13" width="186" height="26" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="588" y="31" font-family="monospace,sans-serif" font-size="11" fill="#64748b">http://localhost:3000/docs</text>
+  <rect x="774" y="13" width="10" height="26" rx="0" fill="#22c55e"/>
+  <text x="777" y="31" font-family="system-ui,sans-serif" font-size="11" fill="#fff">▶</text>
+  <!-- Version badges -->
+  <rect x="24" y="68" width="42" height="20" rx="3" fill="#334155"/>
+  <text x="45" y="82" font-family="system-ui,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">1.0.0</text>
+  <rect x="72" y="68" width="50" height="20" rx="3" fill="#16a34a"/>
+  <text x="97" y="82" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">OAS 3.0</text>
+  <!-- Description -->
+  <text x="24" y="108" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">Production-ready URL shortener backend built with Fastify, PostgreSQL, Redis and BullMQ.</text>
+  <!-- Feature list -->
+  <text x="32" y="134" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">▸ Short link creation &amp; redirect resolution</text>
+  <text x="32" y="152" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">▸ Redis cache-aside strategy · Async analytics worker</text>
+  <text x="32" y="170" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">▸ Rate limiting · Optional expiration · Health checks</text>
+  <!-- Divider -->
+  <line x1="24" y1="194" x2="776" y2="194" stroke="#1e293b" stroke-width="1"/>
+  <!-- Endpoints section -->
+  <text x="24" y="222" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#e2e8f0">Links</text>
+  <text x="80" y="222" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">Short link creation and link statistics</text>
+  <rect x="24" y="232" width="752" height="42" rx="5" fill="#0d2417"/>
+  <rect x="32" y="242" width="52" height="22" rx="3" fill="#16a34a"/>
+  <text x="58" y="257" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">POST</text>
+  <text x="96" y="257" font-family="monospace,sans-serif" font-size="12" fill="#4ade80">/v1/links</text>
+  <text x="190" y="257" font-family="system-ui,sans-serif" font-size="11" fill="#94a3b8">Create a short link</text>
+  <!-- Divider -->
+  <line x1="24" y1="290" x2="776" y2="290" stroke="#1e293b" stroke-width="1"/>
+  <text x="24" y="318" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#e2e8f0">Redirect</text>
+  <text x="98" y="318" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">Short code resolution and redirect flow</text>
+  <rect x="24" y="328" width="752" height="42" rx="5" fill="#0a1929"/>
+  <rect x="32" y="338" width="42" height="22" rx="3" fill="#1d4ed8"/>
+  <text x="53" y="353" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">GET</text>
+  <text x="86" y="353" font-family="monospace,sans-serif" font-size="12" fill="#60a5fa">/{code}</text>
+  <text x="150" y="353" font-family="system-ui,sans-serif" font-size="11" fill="#94a3b8">Resolve and redirect short code</text>
+  <!-- Stack badges bottom -->
+  <rect x="24" y="396" width="76" height="22" rx="11" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="62" y="411" font-family="monospace,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Fastify</text>
+  <rect x="108" y="396" width="76" height="22" rx="11" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="146" y="411" font-family="monospace,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">PostgreSQL</text>
+  <rect x="192" y="396" width="56" height="22" rx="11" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="220" y="411" font-family="monospace,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Redis</text>
+  <rect x="256" y="396" width="64" height="22" rx="11" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="288" y="411" font-family="monospace,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">BullMQ</text>
+  <rect x="328" y="396" width="64" height="22" rx="11" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="360" y="411" font-family="monospace,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Docker</text>
+</svg>

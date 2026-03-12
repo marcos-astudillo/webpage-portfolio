@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1a0533"/>
+      <stop offset="60%" stop-color="#2d1060"/>
+      <stop offset="100%" stop-color="#0e3460"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#2563eb" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Glow circle -->
+  <ellipse cx="400" cy="200" rx="260" ry="220" fill="url(#glow)"/>
+  <!-- Globe icon (simplified) -->
+  <circle cx="400" cy="140" r="52" fill="none" stroke="#7c3aed" stroke-width="3"/>
+  <ellipse cx="400" cy="140" rx="26" ry="52" fill="none" stroke="#a78bfa" stroke-width="1.5"/>
+  <line x1="348" y1="140" x2="452" y2="140" stroke="#a78bfa" stroke-width="1.5"/>
+  <line x1="356" y1="116" x2="444" y2="116" stroke="#a78bfa" stroke-width="1"/>
+  <line x1="356" y1="164" x2="444" y2="164" stroke="#a78bfa" stroke-width="1"/>
+  <!-- Chat bubbles on globe -->
+  <rect x="414" y="96" width="24" height="16" rx="8" fill="#06b6d4"/>
+  <text x="426" y="108" font-family="system-ui,sans-serif" font-size="8" fill="#fff" text-anchor="middle">💬</text>
+  <!-- Title -->
+  <text x="400" y="228" font-family="Georgia,serif" font-size="34" font-weight="700" fill="#f1f5f9" text-anchor="middle">SocioLingo</text>
+  <!-- Tagline -->
+  <text x="400" y="258" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#e2e8f0" text-anchor="middle">Unlock the World:</text>
+  <text x="400" y="280" font-family="system-ui,sans-serif" font-size="13" fill="#c4b5fd" text-anchor="middle">Connect, Learn &amp; Share in Every Language</text>
+  <!-- Auth buttons -->
+  <circle cx="280" cy="340" r="24" fill="#1877f2"/>
+  <text x="280" y="346" font-family="system-ui,sans-serif" font-size="16" font-weight="900" fill="#fff" text-anchor="middle">f</text>
+  <circle cx="400" cy="340" r="24" fill="#fff"/>
+  <text x="400" y="346" font-family="system-ui,sans-serif" font-size="16" fill="#ea4335" text-anchor="middle">G</text>
+  <circle cx="520" cy="340" r="24" fill="#000"/>
+  <text x="520" y="346" font-family="system-ui,sans-serif" font-size="16" fill="#fff" text-anchor="middle"></text>
+  <!-- Sign up button -->
+  <rect x="240" y="382" width="320" height="36" rx="18" fill="#00e5cc"/>
+  <text x="400" y="404" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#0f172a" text-anchor="middle">Sign up with mail</text>
+  <!-- Version -->
+  <text x="400" y="438" font-family="system-ui,sans-serif" font-size="10" fill="#6d28d9" text-anchor="middle">Version 5.23.30+1</text>
+</svg>
