@@ -2,19 +2,22 @@
 
 <p align="center">
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blueviolet?logo=google-chrome)](https://www.marcosastudillo.com)
-[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/marcos-astudillo/webpage-portfolio)
-
-![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
-![Tailwind](https://img.shields.io/badge/TailwindCSS-3-38B2AC?logo=tailwind-css)
-
-![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite)
-![Build](https://img.shields.io/github/actions/workflow/status/marcos-astudillo/webpage-portfolio/ci.yml?label=build)
-![Deployment](https://img.shields.io/badge/deployment-HostGator-orange)
-
-![License](https://img.shields.io/badge/license-MIT-green)
-
+<a href="https://www.marcosastudillo.com">
+    <img src="https://img.shields.io/badge/Live-Demo-blueviolet?logo=google-chrome" />
+</a>
+<a href="https://github.com/marcos-astudillo/webpage-portfolio">
+    <img src="https://img.shields.io/badge/GitHub-Repository-181717?logo=github" />
+</a>
+<img src="https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black" />
+<img src="https://img.shields.io/badge/TypeScript-5-blue?logo=typescript" />
+<img src="https://img.shields.io/badge/TailwindCSS-3-38B2AC?logo=tailwind-css" />
+<img src="https://img.shields.io/badge/Vite-5-646CFF?logo=vite" />
+<br><br>
+<img src="https://img.shields.io/github/actions/workflow/status/marcos-astudillo/webpage-portfolio/ci.yml?label=build" />
+<img src="https://img.shields.io/badge/deployment-HostGator-orange" />
+<img src="https://img.shields.io/badge/license-MIT-green" />
+<img src="https://img.shields.io/github/last-commit/marcos-astudillo/webpage-portfolio" />
+<img src="https://img.shields.io/github/repo-size/marcos-astudillo/webpage-portfolio" />
 </p>
 
 Professional portfolio website for **https://www.marcosastudillo.com**.
