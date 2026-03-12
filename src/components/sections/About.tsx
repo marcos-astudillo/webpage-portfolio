@@ -80,7 +80,7 @@ export function About() {
             </div>
 
             {/* Quick Info Card */}
-            <Card className="mt-4" padding="md">
+            <Card hover className="mt-4" padding="md">
               <dl className="space-y-3">
                 <div className="flex items-start gap-3">
                   <dt className="text-[var(--text-muted)] text-sm w-20 flex-shrink-0">📍</dt>

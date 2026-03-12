@@ -28,7 +28,7 @@ export function Card({
         border border-[var(--border-color)]
         rounded-xl
         shadow-[var(--shadow-sm)]
-        ${hover ? 'hover:border-[var(--accent-subtle)] hover:shadow-[var(--shadow-md)] transition-all duration-300 hover:-translate-y-0.5' : ''}
+        ${hover ? 'hover:border-[var(--accent)] hover:shadow-[var(--shadow-lg)] hover:-translate-y-1 hover:scale-[1.015] transition-all duration-300 cursor-default' : ''}
         ${paddingStyles[padding]}
         ${className}
       `.replace(/\s+/g, ' ').trim()}
