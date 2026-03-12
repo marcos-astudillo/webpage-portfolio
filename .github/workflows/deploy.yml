@@ -2,7 +2,7 @@ name: Deploy to HostGator
 
 on:
   push:
-    branches: [main, master]
+    branches: [main]
 
 jobs:
   build-and-deploy:
@@ -34,12 +34,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          # Change this to your target folder on HostGator, e.g.:
-          #   public_html/          ← root domain
-          #   public_html/portfolio/ ← subdirectory
-          server-dir: public_html/
+          server-dir: ./
           local-dir: ./dist/
-          # Only upload changed files (faster deploys)
           dangerous-clean-slate: false
           exclude: |
             **/.git*
