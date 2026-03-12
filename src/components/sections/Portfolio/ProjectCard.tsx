@@ -20,7 +20,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const statusKey = project.status === 'in-progress' ? 'inProgress' : project.status
 
   return (
-    <Card hover padding="none" className="overflow-hidden flex flex-col">
+    <Card hover padding="none" className="overflow-hidden flex flex-col h-full">
       {/* Project Image */}
       {project.image ? (
         <div className="h-44 bg-[var(--bg-elevated)] overflow-hidden">

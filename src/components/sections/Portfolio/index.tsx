@@ -42,9 +42,9 @@ export function ProjectsView() {
           <p>No projects available yet.</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {projects.map((project, index) => (
-            <AnimatedSection key={project.id} delay={index * 100}>
+            <AnimatedSection key={project.id} delay={index * 100} className="h-full">
               <ProjectCard project={project} />
             </AnimatedSection>
           ))}
