@@ -41,9 +41,23 @@ export const education: EducationItem[] = [
 ]
 
 export const certifications: CertificationItem[] = [
-  { id: 'sql-advanced', name: { en: 'SQL (Advanced)', es: 'SQL (Avanzado)' }, issuer: 'HackerRank', year: '2024' },
-  { id: 'docker-udemy', name: { en: 'Docker: From Basics to Advanced', es: 'Docker: De lo Básico a lo Avanzado' }, issuer: 'Udemy', year: '2024' },
-  { id: 'cybersecurity-cloud', name: { en: 'Cybersecurity with Cloud Computing', es: 'Ciberseguridad con Computación en la Nube' }, issuer: 'LinkedIn Learning', year: '2024' },
-  { id: 'git-github', name: { en: 'Git and GitHub for Beginners', es: 'Git y GitHub para Principiantes' }, issuer: 'Udemy', year: '2024' },
-  { id: 'python-master', name: { en: 'Master Python: Python 3, Django, Flask & Tkinter', es: 'Master Python: Python 3, Django, Flask y Tkinter' }, issuer: 'Udemy', year: '2021' },
+  // HackerRank — Dec 2024
+  { id: 'hr-problem-solving', name: { en: 'Problem Solving (Basic)', es: 'Resolución de Problemas (Básico)' }, issuer: 'HackerRank', year: 'Dec 2024' },
+  { id: 'hr-swe-intern', name: { en: 'Software Engineer Intern', es: 'Ingeniería de Software (Intern)' }, issuer: 'HackerRank', year: 'Dec 2024' },
+  { id: 'hr-css-basic', name: { en: 'CSS (Basic)', es: 'CSS (Básico)' }, issuer: 'HackerRank', year: 'Dec 2024' },
+  { id: 'hr-sql-advanced', name: { en: 'SQL (Advanced)', es: 'SQL (Avanzado)' }, issuer: 'HackerRank', year: 'Dec 2024' },
+  { id: 'hr-sql-intermediate', name: { en: 'SQL (Intermediate)', es: 'SQL (Intermedio)' }, issuer: 'HackerRank', year: 'Dec 2024' },
+  { id: 'hr-sql-basic', name: { en: 'SQL (Basic)', es: 'SQL (Básico)' }, issuer: 'HackerRank', year: 'Dec 2024' },
+  { id: 'hr-java-basic', name: { en: 'Java (Basic)', es: 'Java (Básico)' }, issuer: 'HackerRank', year: 'Dec 2024' },
+  // Udemy — 2024
+  { id: 'udemy-docker', name: { en: 'Docker: From Basics to Advanced', es: 'Docker: De Básico a Avanzado' }, issuer: 'Udemy', year: 'Dec 2024' },
+  { id: 'udemy-django-covid', name: { en: 'Develop A Live Web App With Python Django', es: 'Desarrollar una App Web con Python Django' }, issuer: 'Udemy', year: 'Dec 2024' },
+  { id: 'udemy-sql-concepts', name: { en: 'Learn SQL Concepts', es: 'Conceptos de SQL' }, issuer: 'Udemy', year: 'Dec 2024' },
+  { id: 'udemy-git-github', name: { en: 'Learn Git and GitHub From Beginners', es: 'Git y GitHub para Principiantes' }, issuer: 'Udemy', year: 'Nov 2024' },
+  { id: 'udemy-cybersec', name: { en: 'Seguridad Informática desde Cero', es: 'Seguridad Informática desde Cero' }, issuer: 'Udemy', year: 'Sep 2024' },
+  { id: 'udemy-deepweb', name: { en: 'Anonymity on the Web: Privacy & Deep Web', es: 'Anonimato en la Red: Privacidad y Deep Web' }, issuer: 'Udemy', year: 'Sep 2024' },
+  // LinkedIn Learning — 2024
+  { id: 'li-cybersecurity-cloud', name: { en: 'Cybersecurity with Cloud Computing', es: 'Ciberseguridad con Computación en la Nube' }, issuer: 'LinkedIn Learning', year: 'Dec 2024' },
+  { id: 'li-github-actions', name: { en: 'Practical GitHub Actions', es: 'GitHub Actions en Práctica' }, issuer: 'LinkedIn Learning', year: 'Dec 2024' },
+  { id: 'li-agile', name: { en: 'Agile Software Development', es: 'Desarrollo de Software Ágil' }, issuer: 'LinkedIn Learning', year: 'Aug 2024' },
 ]

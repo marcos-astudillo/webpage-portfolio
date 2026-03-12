@@ -100,7 +100,7 @@ export function Education() {
               </h3>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-3 max-h-[520px] overflow-y-auto pr-1">
               {certifications.map((cert, index) => (
                 <AnimatedSection key={cert.id} delay={300 + index * 80}>
                   <Card hover padding="sm">
