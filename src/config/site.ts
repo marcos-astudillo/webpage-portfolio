@@ -11,7 +11,7 @@ export const SITE_CONFIG = {
   email: 'm.astudillo1986@gmail.com',
   phone: '+1 (613) 501 4176',
   location: 'Ottawa, Ontario, Canada',
-  github: 'https://github.com/ThisIsAntonio',
+  github: 'https://github.com/marcos-astudillo',
   linkedin: 'https://linkedin.com/in/marcos-astudillo-c',
 } as const
 
