@@ -99,6 +99,29 @@ export const experience: ExperienceItem[] = [
     tech: ['Laravel', 'PHP', 'Python', 'Django', 'Node.js', 'Express.js', 'React', 'Angular', 'TypeScript', 'PostgreSQL', 'MySQL', 'MongoDB', 'AWS', 'Docker', 'CI/CD', 'Agile/SCRUM'],
   },
   {
+    id: 'it-equipment', company: 'Carolina Alejandra Silva Peñaloza',
+    role: { en: 'IT Equipment Maintainer', es: 'Técnico de Equipos TI' },
+    type: { en: 'Contract', es: 'Contrato' },
+    period: { en: 'Jul 2021', es: 'Jul 2021' },
+    startDate: '2021-07', endDate: '2021-08',
+    location: { en: 'San Bernardo, Santiago, Chile', es: 'San Bernardo, Santiago, Chile' }, remote: false,
+    description: {
+      en: 'Short-term engagement to evaluate, update, and repair IT equipment, ensuring smooth operations and maximizing system performance and reliability.',
+      es: 'Compromiso de corta duración para evaluar, actualizar y reparar equipos TI, garantizando operaciones fluidas y maximizando el rendimiento del sistema.',
+    },
+    achievements: {
+      en: [
+        'Evaluated, updated, and repaired IT equipment to maximize system performance and reliability.',
+        'Ensured smooth operations and sustained system functionality during the contract period.',
+      ],
+      es: [
+        'Evalué, actualicé y reparé equipos TI para maximizar el rendimiento y fiabilidad del sistema.',
+        'Garanticé operaciones fluidas y funcionalidad sostenida durante el período contractual.',
+      ],
+    },
+    tech: ['Hardware Maintenance', 'IT Support', 'System Diagnostics'],
+  },
+  {
     id: 'object-profile', company: 'Object Profile',
     role: { en: 'Junior Programmer', es: 'Programador Junior' },
     type: { en: 'Full-time', es: 'Tiempo completo' },
@@ -126,5 +149,34 @@ export const experience: ExperienceItem[] = [
       ],
     },
     tech: ['JavaScript', 'Vue', 'CSS', 'HTML', 'Smalltalk', 'Roassal', 'JSON', 'AR Visualization'],
+  },
+  {
+    id: 'municipalidad-vitacura', company: 'Municipalidad De Vitacura',
+    role: { en: 'Surveying Engineer – Public Spaces Directorate', es: 'Ingeniero de Topografía – Dirección de Espacios Públicos' },
+    type: { en: 'Permanent Full-time', es: 'Permanente Tiempo completo' },
+    period: { en: 'Aug 2011 – Jul 2016', es: 'Ago 2011 – Jul 2016' },
+    startDate: '2011-08', endDate: '2016-07',
+    location: { en: 'Vitacura, Chile', es: 'Vitacura, Chile' }, remote: false,
+    description: {
+      en: 'Managed and oversaw technical surveying operations for the Public Spaces Directorate, contributing to large-scale infrastructure projects and municipal zoning accuracy. Served as a key liaison between residents, construction companies, and public institutions for urban permitting and compliance.',
+      es: 'Gestioné y supervisé operaciones técnicas de topografía para la Dirección de Espacios Públicos, contribuyendo a proyectos de infraestructura a gran escala y precisión en zonificación municipal. Actué como enlace entre residentes, constructoras e instituciones públicas.',
+    },
+    achievements: {
+      en: [
+        'Oversaw topographic service contracts for the municipality, including the undergrounding of Gerónimo de Alderete Avenue.',
+        'Provided in-person support and documentation for public space occupancy permits, coordinating with contractors.',
+        'Facilitated municipal revenue collection of approximately CLP 100 million annually through permit oversight.',
+        'Collaborated with the Public Works Directorate to maintain and update digital municipal plans.',
+        'Ensured regulatory compliance and documentation standards for all public works records.',
+      ],
+      es: [
+        'Supervisé contratos de servicios topográficos municipales, incluyendo el soterrado de Av. Gerónimo de Alderete.',
+        'Proporcioné apoyo presencial y documentación para permisos de ocupación de espacios públicos.',
+        'Facilité la recaudación de aproximadamente CLP 100 millones anuales mediante supervisión de permisos.',
+        'Colaboré con la Dirección de Obras Públicas para mantener y actualizar planes municipales digitales.',
+        'Garanticé el cumplimiento normativo y los estándares de documentación para todos los registros de obras.',
+      ],
+    },
+    tech: ['AutoCAD', 'GIS', 'Technical Surveying', 'Urban Planning', 'Regulatory Compliance'],
   },
 ]
