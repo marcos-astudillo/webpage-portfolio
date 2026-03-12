@@ -1,4 +1,4 @@
-import { MapPin, Calendar, CheckCircle2, Wifi } from 'lucide-react'
+import { MapPin, Calendar, CheckCircle2, Wifi, Building2 } from 'lucide-react'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { Card } from '@/components/ui/Card'
@@ -66,10 +66,15 @@ export function Experience() {
                       <MapPin size={13} />
                       {job.location[language]}
                     </span>
-                    {job.remote && (
+                    {job.remote ? (
                       <span className="flex items-center gap-1.5 text-emerald-400">
                         <Wifi size={13} />
                         {t.experience.remote}
+                      </span>
+                    ) : (
+                      <span className="flex items-center gap-1.5 text-[var(--text-muted)]">
+                        <Building2 size={13} />
+                        {t.experience.onsite}
                       </span>
                     )}
                   </div>

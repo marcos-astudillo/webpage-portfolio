@@ -20,7 +20,7 @@ export interface Translations {
     title: string; subtitle: string
     categories: { languages: string; frameworks: string; databases: string; cloud: string; web: string; tools: string; ai: string; testing: string }
   }
-  experience: { title: string; subtitle: string; present: string; keyAchievements: string; remote: string }
+  experience: { title: string; subtitle: string; present: string; keyAchievements: string; remote: string; onsite: string }
   education: { title: string; subtitle: string; gpa: string; honours: string; relevant: string; certifications: string }
   contact: {
     title: string; subtitle: string; formTitle: string

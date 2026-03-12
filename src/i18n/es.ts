@@ -28,7 +28,7 @@ export const es: Translations = {
     title: 'Stack Tecnológico', subtitle: 'Tecnologías y herramientas con las que trabajo',
     categories: { languages: 'Lenguajes de Programación', frameworks: 'Frameworks y Librerías', databases: 'Bases de Datos', cloud: 'Cloud y DevOps', web: 'Tecnologías Web', tools: 'Herramientas y Metodologías', ai: 'IA e Ingeniería de Datos', testing: 'Testing y QA' },
   },
-  experience: { title: 'Experiencia Laboral', subtitle: 'Mi trayectoria profesional', present: 'Presente', keyAchievements: 'Logros Clave', remote: 'Remoto' },
+  experience: { title: 'Experiencia Laboral', subtitle: 'Mi trayectoria profesional', present: 'Presente', keyAchievements: 'Logros Clave', remote: 'Remoto', onsite: 'Presencial' },
   education: { title: 'Educación y Certificaciones', subtitle: 'Formación académica y aprendizaje continuo', gpa: 'Promedio', honours: 'Con Honores', relevant: 'Cursos Relevantes', certifications: 'Certificaciones' },
   contact: {
     title: 'Contáctame', subtitle: 'Actualmente estoy disponible para proyectos freelance y oportunidades de tiempo completo. Ya sea que tengas un proyecto en mente o simplemente quieras conectar, mi bandeja de entrada siempre está abierta.',

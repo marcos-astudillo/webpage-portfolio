@@ -28,7 +28,7 @@ export const en: Translations = {
     title: 'Tech Stack', subtitle: 'Technologies and tools I work with',
     categories: { languages: 'Programming Languages', frameworks: 'Frameworks & Libraries', databases: 'Databases', cloud: 'Cloud & DevOps', web: 'Web Technologies', tools: 'Tools & Methodologies', ai: 'AI & Data Engineering', testing: 'Testing & QA' },
   },
-  experience: { title: 'Work Experience', subtitle: 'My professional journey', present: 'Present', keyAchievements: 'Key Achievements', remote: 'Remote' },
+  experience: { title: 'Work Experience', subtitle: 'My professional journey', present: 'Present', keyAchievements: 'Key Achievements', remote: 'Remote', onsite: 'On-site' },
   education: { title: 'Education & Certifications', subtitle: 'Academic background and continuous learning', gpa: 'GPA', honours: 'Honours', relevant: 'Relevant Coursework', certifications: 'Certifications' },
   contact: {
     title: 'Get in Touch', subtitle: "I'm currently open to freelance projects and full-time opportunities. Whether you have a project in mind or just want to connect, my inbox is always open.",

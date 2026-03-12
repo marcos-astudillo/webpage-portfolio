@@ -1,5 +1,5 @@
 import { useState, FormEvent, useCallback } from 'react'
-import { Send, Mail, MapPin, CheckCircle, AlertCircle, Loader2, Clock, RefreshCw, Phone, Github } from 'lucide-react'
+import { Send, Mail, MapPin, CheckCircle, AlertCircle, Loader2, Clock, RefreshCw, Phone, Github, type LucideIcon } from 'lucide-react'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
@@ -34,7 +34,7 @@ function validateForm(data: FormState, t: ReturnType<typeof useLanguage>['t']): 
 function InfoRow({
   icon: Icon, label, children, accentColor = 'accent', delay = 0,
 }: {
-  icon: React.ComponentType<{ size?: number; className?: string }>
+  icon: LucideIcon
   label: string; children: React.ReactNode
   accentColor?: 'accent' | 'emerald'; delay?: number
 }) {
