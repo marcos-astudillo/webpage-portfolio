@@ -18,6 +18,7 @@
 <img src="https://img.shields.io/badge/license-MIT-green" />
 <img src="https://img.shields.io/github/last-commit/marcos-astudillo/webpage-portfolio" />
 <img src="https://img.shields.io/github/repo-size/marcos-astudillo/webpage-portfolio" />
+<img src="https://komarev.com/ghpvc/?username=marcos-astudillo&label=repo+views&color=blue&style=flat" />
 </p>
 
 Professional portfolio website for **https://www.marcosastudillo.com**.
@@ -27,15 +28,18 @@ The project outputs a **static build** that can be deployed on almost any hostin
 
 ---
 
+## Preview
+
+<p align="center">
+<img src="public/assets/images/webpage.png" width="900">
+</p>
+
+---
+
 ## 🌐 Live Demo
 
 👉 https://www.marcosastudillo.com
 
----
-
-## Preview
-
-![Portfolio Screenshot](public/assets/images/webpage.png)
 
 ---
 
