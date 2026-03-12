@@ -27,7 +27,7 @@ Add a screenshot of the site here after deployment.
 
 Then reference it like:
 
-    ![Portfolio Screenshot](docs/preview.png)
+    ![Portfolio Screenshot](./docs/images/preview.png)
 
 ------------------------------------------------------------------------
 

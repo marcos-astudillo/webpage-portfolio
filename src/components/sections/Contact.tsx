@@ -90,11 +90,32 @@ export function Contact() {
 
     setStatus('loading')
     try {
+      const params = new URLSearchParams()
+      params.append('name', form.name)
+      params.append('email', form.email)
+      params.append('subject', form.subject)
+      params.append('message', form.message)
+
       const response = await fetch('/contact.php', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(form),
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: params.toString(),
       })
-      if (response.ok) { setStatus('success'); setForm(initialForm); setErrors({}); refreshCaptcha() }
-      else { setStatus('error') }
+
+      const result = await response.text()
+      console.log('contact.php response:', response.status, result)
+
+      if (response.ok) {
+        setStatus('success')
+        setForm(initialForm)
+        setErrors({})
+        refreshCaptcha()
+      } else {
+        console.error('Contact form error:', response.status, result)
+        setStatus('error')
+      }
     } catch {
       if (import.meta.env.DEV) { setTimeout(() => { setStatus('success'); setForm(initialForm); refreshCaptcha() }, 1000) }
       else { setStatus('error') }
