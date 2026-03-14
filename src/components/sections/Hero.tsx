@@ -26,7 +26,7 @@ const itemVariants = {
 }
 
 export function Hero({ onNavClick }: HeroProps) {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   return (
     <section
       className="relative min-h-[calc(100vh-4rem)] flex items-center hero-gradient"
@@ -105,23 +105,23 @@ export function Hero({ onNavClick }: HeroProps) {
               </Button>
               <Button
                 as="a"
-                href={ASSETS.resumeEn}
+                href={language === 'es' ? ASSETS.resumeEs : ASSETS.resumeEn}
                 download
                 variant="secondary"
                 size="lg"
                 icon={<Download size={17} />}
               >
-                {t.hero.cta.resumeEn}
+                {t.hero.cta.resumeBtn}
               </Button>
               <Button
                 as="a"
-                href={ASSETS.resumeEs}
+                href={language === 'es' ? ASSETS.cvEs : ASSETS.cvEn}
                 download
                 variant="secondary"
                 size="lg"
                 icon={<Download size={17} />}
               >
-                {t.hero.cta.resumeEs}
+                {t.hero.cta.cvBtn}
               </Button>
               <Button
                 variant="ghost"

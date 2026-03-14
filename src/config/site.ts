@@ -22,6 +22,8 @@ export const ASSETS = {
   profileImage: '/assets/images/profile.png',
   resumeEn: '/assets/resume/marcos-astudillo-resume-en.pdf',
   resumeEs: '/assets/resume/marcos-astudillo-resume-es.pdf',
+  cvEn: '/assets/resume/marcos-astudillo-cv-en.pdf',
+  cvEs: '/assets/resume/marcos-astudillo-cv-es.pdf',
   ogImage: '/assets/images/og-image.jpg',
 } as const
 
