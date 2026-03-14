@@ -26,9 +26,7 @@ const itemVariants = {
 }
 
 export function Hero({ onNavClick }: HeroProps) {
-  const { t, language } = useLanguage()
-  const resumeHref = language === 'es' ? ASSETS.resumeEs : ASSETS.resumeEn
-
+  const { t } = useLanguage()
   return (
     <section
       className="relative min-h-[calc(100vh-4rem)] flex items-center hero-gradient"
@@ -105,16 +103,28 @@ export function Hero({ onNavClick }: HeroProps) {
               >
                 {t.hero.cta.contact}
               </Button>
-              <Button
-                as="a"
-                href={resumeHref}
-                download
-                variant="secondary"
-                size="lg"
-                icon={<Download size={17} />}
-              >
-                {t.hero.cta.resume}
-              </Button>
+              <div className="flex items-center gap-1.5">
+                <Button
+                  as="a"
+                  href={ASSETS.resumeEn}
+                  download
+                  variant="secondary"
+                  size="lg"
+                  icon={<Download size={17} />}
+                >
+                  CV · EN
+                </Button>
+                <Button
+                  as="a"
+                  href={ASSETS.resumeEs}
+                  download
+                  variant="secondary"
+                  size="lg"
+                  icon={<Download size={17} />}
+                >
+                  CV · ES
+                </Button>
+              </div>
               <Button
                 variant="ghost"
                 size="lg"
