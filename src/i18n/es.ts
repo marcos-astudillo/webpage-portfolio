@@ -10,7 +10,7 @@ export const es: Translations = {
     greeting: 'Hola, soy', name: 'Marcos Astudillo',
     title: 'Desarrollador Full-Stack', subtitle: 'Ingeniero de Software · Especialista Backend',
     intro: 'Construyo aplicaciones web escalables con TypeScript, Node.js y React. Enfocado en arquitectura limpia, diseño de APIs REST y sistemas de alto rendimiento en producción.',
-    cta: { contact: 'Contáctame', resume: 'Descargar CV', portfolio: 'Ver Portafolio' },
+    cta: { contact: 'Contáctame', resume: 'Descargar CV', resumeEn: 'Résumé (EN)', resumeEs: 'CV', portfolio: 'Ver Portafolio' },
     social: { github: 'Perfil de GitHub', linkedin: 'Perfil de LinkedIn' },
     location: 'Ottawa, Ontario, Canadá', available: 'Disponible para oportunidades',
   },

@@ -103,28 +103,26 @@ export function Hero({ onNavClick }: HeroProps) {
               >
                 {t.hero.cta.contact}
               </Button>
-              <div className="flex items-center gap-1.5">
-                <Button
-                  as="a"
-                  href={ASSETS.resumeEn}
-                  download
-                  variant="secondary"
-                  size="lg"
-                  icon={<Download size={17} />}
-                >
-                  CV · EN
-                </Button>
-                <Button
-                  as="a"
-                  href={ASSETS.resumeEs}
-                  download
-                  variant="secondary"
-                  size="lg"
-                  icon={<Download size={17} />}
-                >
-                  CV · ES
-                </Button>
-              </div>
+              <Button
+                as="a"
+                href={ASSETS.resumeEn}
+                download
+                variant="secondary"
+                size="lg"
+                icon={<Download size={17} />}
+              >
+                {t.hero.cta.resumeEn}
+              </Button>
+              <Button
+                as="a"
+                href={ASSETS.resumeEs}
+                download
+                variant="secondary"
+                size="lg"
+                icon={<Download size={17} />}
+              >
+                {t.hero.cta.resumeEs}
+              </Button>
               <Button
                 variant="ghost"
                 size="lg"

@@ -7,7 +7,7 @@ export interface Translations {
   }
   hero: {
     greeting: string; name: string; title: string; subtitle: string; intro: string
-    cta: { contact: string; resume: string; portfolio: string }
+    cta: { contact: string; resume: string; resumeEn: string; resumeEs: string; portfolio: string }
     social: { github: string; linkedin: string }
     location: string; available: string
   }
