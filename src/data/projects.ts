@@ -41,7 +41,7 @@ export const projects: Project[] = [
       "Bootstrap",
       "Render",
     ],
-    image: "/assets/images/projects/hotel-booker.svg",
+    image: "/assets/images/projects/hotel-booker.webp",
     links: {
       github: "https://github.com/marcos-astudillo/hotel-booker-fullstack",
       demo: "https://hotel-booker-fullstack.onrender.com/",
@@ -66,7 +66,7 @@ export const projects: Project[] = [
       "Docker",
       "OpenAPI",
     ],
-    image: "/assets/images/projects/flashlink-service.svg",
+    image: "/assets/images/projects/flashlink-service.webp",
     links: {
       github: "https://github.com/marcos-astudillo/flashlink-service",
       demo: "https://flashlink-service-production.up.railway.app/docs",
@@ -90,7 +90,7 @@ export const projects: Project[] = [
       "Tailwind CSS",
       "tRPC",
     ],
-    image: "/assets/images/projects/daily-update-app.svg",
+    image: "/assets/images/projects/daily-update-app.webp",
     links: {
       github: "https://github.com/marcos-astudillo/Daily-Update-App",
       demo: "https://daily-update-app.vercel.app/",
@@ -100,6 +100,58 @@ export const projects: Project[] = [
     year: "2024",
   },
   {
+    id: "ts-api-gateway",
+    title: "TS API Gateway",
+    description: {
+      en: "Scalable API Gateway for microservices built with Fastify and TypeScript. Implements JWT authentication with Auth0, Redis-based distributed rate limiting, circuit breaker resilience, and configurable routing to upstream services.",
+      es: "API Gateway diseñado para arquitecturas de microservicios, desarrollado con Fastify y TypeScript. Incluye autenticación JWT con Auth0, rate limiting distribuido con Redis, resiliencia mediante circuit breaker y enrutamiento dinámico hacia servicios backend.",
+    },
+    stack: [
+      "Fastify",
+      "TypeScript",
+      "Node.js",
+      "Redis",
+      "Auth0",
+      "Docker",
+      "Vitest",
+      "GitHub Actions",
+    ],
+    image: "/assets/images/projects/ts-api-gateway.webp",
+    links: {
+      github: "https://github.com/marcos-astudillo/ts-api-gateway",
+      demo: "https://ts-api-gateway-production.up.railway.app/docs",
+    },
+    status: "live",
+    featured: true,
+    year: "2026",
+  },
+  {
+    id: "redis-rate-limiter",
+    title: "Redis Rate Limiter — Distributed Rate Limiting Service",
+    description: {
+      en: "Production-grade distributed rate limiter built with Node.js, TypeScript, Redis Lua scripts, and PostgreSQL. Implements the Token Bucket algorithm with atomic Redis operations to enforce API request limits across multiple services. Supports dynamic rate limit policies, reusable Express middleware, standalone microservice usage, and interactive OpenAPI documentation.",
+      es: "Servicio de rate limiting distribuido listo para producción construido con Node.js, TypeScript, Redis y PostgreSQL. Implementa el algoritmo Token Bucket utilizando scripts Lua en Redis para garantizar operaciones atómicas y evitar condiciones de carrera en entornos concurrentes. Permite definir políticas dinámicas de límites por plan, integrarse como middleware en aplicaciones Express o funcionar como microservicio independiente con documentación interactiva OpenAPI.",
+    },
+    stack: [
+      "Node.js",
+      "TypeScript",
+      "Express",
+      "Redis",
+      "PostgreSQL",
+      "Lua Scripts",
+      "Docker",
+      "OpenAPI",
+    ],
+    image: "/assets/images/projects/redis-rate-limiter-api.webp",
+    links: {
+      github: "https://github.com/marcos-astudillo/redis-rate-limiter",
+      demo: "https://redis-rate-limiter-production.up.railway.app/api-docs/",
+    },
+    status: "live",
+    featured: true,
+    year: "2026",
+  },
+  {
     id: "sociolingo",
     title: "SocioLingo",
     description: {
@@ -107,7 +159,7 @@ export const projects: Project[] = [
       es: "App de chat para aprendizaje de idiomas construida con Flutter y Firebase. Mensajería multilingüe en tiempo real con traducción por IA en inglés, español y francés.",
     },
     stack: ["Flutter", "Dart", "Firebase", "AI Translation"],
-    image: "/assets/images/projects/sociolingo.svg",
+    image: "/assets/images/projects/sociolingo.webp",
     links: {
       github: "https://github.com/marcos-astudillo/Sociolingo",
       demo: "https://sociolingo-project.web.app",
@@ -124,7 +176,7 @@ export const projects: Project[] = [
       es: "Suite de simulación de escritorio con Autómatas Celulares, Juego de la Vida de Conway y Máquina de Turing en JavaFX y Swing. Arquitectura MVC, red cliente-servidor e i18n completa.",
     },
     stack: ["Java", "JavaFX", "Swing", "MVC", "Client-Server", "i18n"],
-    image: "/assets/images/projects/jap-suite.svg",
+    image: "/assets/images/projects/jap-suite.webp",
     links: {
       github: "https://github.com/marcos-astudillo/CA_GF_TM",
     },
@@ -146,7 +198,7 @@ export const projects: Project[] = [
       "Architecture",
       "Markdown",
     ],
-    image: "/assets/images/projects/system-design-notes.svg",
+    image: "/assets/images/projects/system-design-notes.webp",
     links: {
       github: "https://github.com/marcos-astudillo/system-design-notes",
     },
