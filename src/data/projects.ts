@@ -152,6 +152,33 @@ export const projects: Project[] = [
     year: "2026",
   },
   {
+    id: "analytics-pipeline",
+    title: "Analytics Pipeline Service",
+    description: {
+      en: "Event analytics pipeline built with Node.js and TypeScript that ingests, queues, and processes events using Redis and PostgreSQL. It uses Prisma for database access and schema migrations, Express for API routing, Zod for validation, and Vitest for testing. The project supports event ingestion, durable queue handling, and metrics endpoints with comprehensive automated tests.",
+      es: "Pipeline de analítica de eventos desarrollado con Node.js y TypeScript que ingiere, encola y procesa eventos utilizando Redis y PostgreSQL. Usa Prisma para acceso a datos y migraciones de esquema, Express para las rutas de la API, Zod para validación y Vitest para pruebas. El proyecto soporta ingestión de eventos, manejo duradero de colas y endpoints de métricas con pruebas automatizadas completas.",
+    },
+    stack: [
+      "Node.js",
+      "TypeScript",
+      "Express",
+      "Redis",
+      "PostgreSQL",
+      "Prisma",
+      "Docker",
+      "Swagger",
+      "CI/CD",
+    ],
+    image: "/assets/images/projects/analytics-pipeline.webp",
+    links: {
+      github: "https://github.com/marcos-astudillo/analytics-pipeline",
+      demo: "https://analytics-pipeline-production-189b.up.railway.app/docs",
+    },
+    status: "live",
+    featured: true,
+    year: "2026",
+  },
+  {
     id: "sociolingo",
     title: "SocioLingo",
     description: {
